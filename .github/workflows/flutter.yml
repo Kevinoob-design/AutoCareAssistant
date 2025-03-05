@@ -28,13 +28,24 @@ jobs:
 
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
-
-      # Consider passing '--fatal-infos' for slightly stricter analysis.
-      - name: Analyze project source
-        run: flutter analyze
-
+        
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
       - name: Run tests
         run: flutter test
+
+      # Consider passing '--fatal-infos' for slightly stricter analysis.
+      - name: Analyze project source
+        run: flutter analyze > dart_analyze.txt || true
+        
+      - name: Dart Analyze to SARIF
+        uses: advanced-security/dart-analyzer-sarif@main
+        with:
+          input: dart_analyze.txt
+          output: dart_analyze.sarif
+          
+      - name: Upload SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: dart_analyze.sarif
