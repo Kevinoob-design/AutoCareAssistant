@@ -1,9 +1,9 @@
 import 'package:auto_care_assistant/splash/splash_controller.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:auto_care_assistant/splash/splash_view.dart' show SplashScreen;
+import 'package:auto_care_assistant/splash/splash_screen.dart' show SplashScreen;
 import '../../settings/settings_controller.dart' show SettingsController;
-import '../../settings/settings_view.dart' show SettingsScreen;
+import '../../settings/settings_screen.dart' show SettingsScreen;
 
 Map<String, WidgetBuilder> buildRoutes({required SettingsController settingsController}) {
   final Map<String, WidgetBuilder> routes = {
