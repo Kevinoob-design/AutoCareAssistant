@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "appTitle": "AutoCare Assistant",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "splashScreenFirstMessage": "Welcome to AutoCare Assistant. \nLet’s get started!",
+  "@splashScreenFirstMessage": {
+    "description": "First message of the splash screen"
+  },
+  "splashScreenSecondMessage": "We help people find car shops \naround their location",
+  "@splashScreenSecondMessage": {
+    "description": "Second message of the splash screen"
+  },
+  "splashScreenThirdMessage": "We show the easy way to keep your \ncar maintenance on track.",
+  "@splashScreenThirdMessage": {
+    "description": "Second message of the splash screen"
+  }
+}
