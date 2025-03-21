@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657932884897",
+    "project_id": "auto-care-assistant",
+    "storage_bucket": "auto-care-assistant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657932884897:android:1eee4414f8e9c7d22149e0",
+        "android_client_info": {
+          "package_name": "com.example.auto_care_assistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM3RinViI4E2bRth61L3U8UGVE8hZVqSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
