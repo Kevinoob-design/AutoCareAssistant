@@ -15,9 +15,7 @@ class PrimaryButton extends StatelessWidget {
         backgroundColor: const Color(0xFFFF7643),
         foregroundColor: Colors.white,
         minimumSize: const Size(double.infinity, 48),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-        ),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
       ),
       child: Text(text),
     );

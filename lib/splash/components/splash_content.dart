@@ -1,7 +1,5 @@
-import 'package:auto_care_assistant/shared/components/containers/image_container.dart'
-    show ImageContainer;
-import 'package:auto_care_assistant/shared/components/headings/heading.dart'
-    show Heading;
+import 'package:auto_care_assistant/shared/components/containers/image_container.dart' show ImageContainer;
+import 'package:auto_care_assistant/shared/components/headings/heading.dart' show Heading;
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
