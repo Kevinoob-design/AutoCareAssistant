@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       const Spacer(),
                       PageIndicators(totalPages: widget.controller.images.length, currentPage: currentPage),
                       const Spacer(flex: 3),
-                      PrimaryButton(text: 'Continue', cb: () => {}),
+                      PrimaryButton(text: 'Continue', cb: () => Navigator.pushNamed(context, '/signup')),
                       const Spacer(),
                     ],
                   ),
