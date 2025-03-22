@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ImageContainer extends StatelessWidget {
-  const ImageContainer({super.key, required this.image, this.height = 265, this.width = 235});
+  const ImageContainer({
+    super.key,
+    required this.image,
+    this.height = 265,
+    this.width = 235,
+  });
 
   final String image;
   final double height;
@@ -9,6 +14,11 @@ class ImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(image, fit: BoxFit.contain, height: height, width: width);
+    return Image.network(
+      image,
+      fit: BoxFit.contain,
+      height: height,
+      width: width,
+    );
   }
 }

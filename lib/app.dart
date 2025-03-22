@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:auto_care_assistant/splash/splash_screen.dart' show SplashScreen;
+import 'package:auto_care_assistant/splash/splash_screen.dart'
+    show SplashScreen;
 import 'settings/settings_controller.dart' show SettingsController;
 import 'shared/config/theme.dart' show darkTheme, lightTheme;
 import 'shared/routes/routes.dart' show buildRoutes;
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
           //
           // The appTitle is defined in .arb files found in the localization
           // directory.
-          onGenerateTitle: (BuildContext context) => AppLocalizations.of(context)!.appTitle,
+          onGenerateTitle:
+              (BuildContext context) => AppLocalizations.of(context)!.appTitle,
 
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
