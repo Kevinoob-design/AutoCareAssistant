@@ -1,3 +1,5 @@
+import 'package:auto_care_assistant/home/home_screen.dart' show HomeScreen;
+import 'package:auto_care_assistant/otp/otp_screen.dart' show OtpScreen;
 import 'package:auto_care_assistant/settings/settings_controller.dart'
     show SettingsController;
 import 'package:auto_care_assistant/settings/settings_screen.dart'
@@ -21,6 +23,8 @@ Map<String, WidgetBuilder> buildRoutes({
         (context) => SplashScreen(controller: SplashController()),
     SignUpScreen.routeName:
         (context) => SignUpScreen(controller: SignupController()),
+    OtpScreen.routeName: (context) => OtpScreen(),
+    HomeScreen.routeName: (context) => HomeScreen(),
   };
 
   return routes;
