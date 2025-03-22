@@ -29,14 +29,8 @@ class SettingsScreen extends StatelessWidget {
           // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
           items: const [
-            DropdownMenuItem(
-              value: ThemeMode.system,
-              child: Text('System Theme'),
-            ),
-            DropdownMenuItem(
-              value: ThemeMode.light,
-              child: Text('Light Theme'),
-            ),
+            DropdownMenuItem(value: ThemeMode.system, child: Text('System Theme')),
+            DropdownMenuItem(value: ThemeMode.light, child: Text('Light Theme')),
             DropdownMenuItem(value: ThemeMode.dark, child: Text('Dark Theme')),
           ],
         ),
