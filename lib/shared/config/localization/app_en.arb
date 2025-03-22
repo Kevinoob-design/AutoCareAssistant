@@ -14,6 +14,46 @@
   },
   "splashScreenThirdMessage": "We show the easy way to keep your \ncar maintenance on track.",
   "@splashScreenThirdMessage": {
-    "description": "Second message of the splash screen"
+    "description": "Third message of the splash screen"
+  },
+  "signUpSubtitle": "Register Account",
+  "@signUpSubtitle": {
+    "description": "Sign Up subtitle"
+  },
+  "signUpInstructions": "Complete your details or continue \nwith social media",
+  "@signUpInstructions": {
+    "description": "Sign Up instructions"
+  },
+  "signUpDisclaimer": "By continuing your confirm that you agree \nwith our Term and Condition",
+  "@signUpDisclaimer": {
+    "description": "Sign Up disclaimer"
+  },
+  "formEmailHint": "Enter your email",
+  "@formEmailHint": {
+    "description": "Form email hint"
+  },
+  "formEmailLabel": "Email",
+  "@formEmailLabel": {
+    "description": "Form email label"
+  },
+  "formPasswordHint": "Enter your password",
+  "@formPasswordHint": {
+    "description": "Form password hint"
+  },
+  "formPasswordLabel": "Password",
+  "@formPasswordLabel": {
+    "description": "Form password label"
+  },
+  "formReEnterHint": "Enter your password",
+  "@formReEnterHint": {
+    "description": "Form re enter password hint"
+  },
+  "formReEnterLabel": "Re-enter your password",
+  "@formReEnterLabel": {
+    "description": "Form re enter password label"
+  },
+  "continueTextButton": "Continue",
+  "@continueTextButton": {
+    "description": "Continue text on button"
   }
 }
