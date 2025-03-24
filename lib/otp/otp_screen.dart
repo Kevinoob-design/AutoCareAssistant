@@ -32,7 +32,11 @@ class OtpScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.20),
-                  OtpForm(parsedPhone: args.parsedPhone),
+                  OtpForm(
+                    parsedPhone: args.parsedPhone,
+                    verificationId: args.verificationId,
+                    forceResendingToken: args.forceResendingToken,
+                  ),
                 ],
               ),
             ),

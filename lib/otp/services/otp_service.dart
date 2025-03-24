@@ -8,12 +8,12 @@ class OtpService {
 
   static void cbCompleted(PhoneAuthCredential credential) {}
 
-  static void sendVerification(
+  static Future<void> sendVerification(
     String parsedPhone,
     int? codeSentForceResendingToken,
     PhoneCodeSent cbCodeSent,
   ) {
-    auth.verifyPhoneNumber(
+    return auth.verifyPhoneNumber(
       timeout: const Duration(seconds: 60),
       forceResendingToken: codeSentForceResendingToken,
       phoneNumber: parsedPhone,

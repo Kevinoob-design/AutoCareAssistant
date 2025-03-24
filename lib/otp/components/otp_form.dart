@@ -8,13 +8,22 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class OtpForm extends StatelessWidget {
-  const OtpForm({super.key, required this.parsedPhone});
+  const OtpForm({
+    super.key,
+    required this.parsedPhone,
+    required this.verificationId,
+    required this.forceResendingToken,
+  });
 
   final String parsedPhone;
+  final String verificationId;
+  final int? forceResendingToken;
 
   @override
   Widget build(BuildContext context) {
     List<int> verificationCode = [];
+    String codeSentVerificationId = verificationId;
+    int? codeSentForceResendingToken = forceResendingToken;
 
     void onPinChanged(String pin, int index) {
       if (pin.isNotEmpty) {
@@ -26,16 +35,9 @@ class OtpForm extends StatelessWidget {
       }
     }
 
-    String codeSentVerificationId = '';
-    int forceResendingToken = 0;
-
     void cbCodeSent(String verificationId, int? forceResendingToken) {
       codeSentVerificationId = verificationId;
-      forceResendingToken = forceResendingToken;
-    }
-
-    if (context.mounted) {
-      OtpService.sendVerification(parsedPhone, forceResendingToken, cbCodeSent);
+      codeSentForceResendingToken = forceResendingToken;
     }
 
     void cbOnContinuePress() {
@@ -80,7 +82,7 @@ class OtpForm extends StatelessWidget {
             onPressed:
                 () => OtpService.sendVerification(
                   parsedPhone,
-                  forceResendingToken,
+                  codeSentForceResendingToken,
                   cbCodeSent,
                 ),
             child: Text(

@@ -1,4 +1,6 @@
 import 'package:auto_care_assistant/otp/model/otp_args.dart' show OtpArguments;
+import 'package:auto_care_assistant/otp/services/otp_service.dart'
+    show OtpService;
 import 'package:auto_care_assistant/shared/components/buttons/primary_button.dart'
     show PrimaryButton;
 import 'package:auto_care_assistant/shared/components/inputs/input_text.dart'
@@ -33,14 +35,22 @@ class SignUpForm extends StatelessWidget {
       return true;
     }
 
-    void goToOtp() {
-      if (!verifyNumber(parsedPhone)) return;
-
+    void cbCodeSent(String verificationId, int? forceResendingToken) {
       Navigator.pushNamed(
         context,
         '/otp',
-        arguments: OtpArguments(parsedPhone),
+        arguments: OtpArguments(
+          parsedPhone,
+          verificationId,
+          forceResendingToken,
+        ),
       );
+    }
+
+    void goToOtp() async {
+      if (!verifyNumber(parsedPhone)) return;
+
+      await OtpService.sendVerification(parsedPhone, null, cbCodeSent);
     }
 
     return Form(
