@@ -6,9 +6,13 @@ import 'package:auto_care_assistant/shared/config/constants.dart'
     show borderSideColor;
 import 'package:auto_care_assistant/signup/components/form.dart'
     show SignUpForm;
+import 'package:firebase_auth/firebase_auth.dart'
+    show FirebaseAuth, GoogleAuthProvider;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:auto_care_assistant/signup/signup_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart'
+    show GoogleSignIn, GoogleSignInAccount, GoogleSignInAuthentication;
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key, required this.controller});
@@ -18,6 +22,26 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void goToHome() {
+      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+    }
+
+    void signInWithGoogle() async {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      await FirebaseAuth.instance.signInWithCredential(credential);
+
+      goToHome();
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text("Sign Up")),
       body: SafeArea(
@@ -48,7 +72,7 @@ class SignUpScreen extends StatelessWidget {
                         AppLocalizations.of(
                           context,
                         )!.continueWithGoogleTextButton,
-                    press: () {},
+                    press: signInWithGoogle,
                   ),
                   const SizedBox(height: 16),
                   Text(
