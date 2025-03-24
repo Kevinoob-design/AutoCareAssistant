@@ -1,5 +1,5 @@
 import 'package:auto_care_assistant/shared/config/constants.dart'
-    show borderSideColor;
+    show kBorderSideColor;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 
@@ -25,7 +25,7 @@ class OauthSignupButton extends StatelessWidget {
         minimumSize: const Size(double.infinity, 48),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16)),
-          side: BorderSide(color: borderSideColor, width: 1),
+          side: BorderSide(color: kBorderSideColor, width: 1),
         ),
       ),
       child: Row(
