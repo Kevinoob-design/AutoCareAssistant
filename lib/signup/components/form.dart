@@ -16,11 +16,25 @@ class SignUpForm extends StatelessWidget {
 
     void parsePhone(dynamic phone) {
       parsedPhone = '+$phone';
-      // print(parsedPhone);
+    }
+
+    bool verifyNumber(String phone) {
+      if (phone.isEmpty) return false;
+      if (phone.length != 12) return false;
+
+      final String internationalCode = phone.substring(0, 2);
+      final String countryAreaCode = phone.substring(2, 5);
+      final String localPhoneNumber = phone.substring(5);
+
+      if (internationalCode != '+1') return false;
+      if (!['809', '829', '849'].contains(countryAreaCode)) return false;
+      if (localPhoneNumber.length != 7) return false;
+
+      return true;
     }
 
     void goToOtp() {
-      if (parsedPhone.isEmpty) return;
+      if (!verifyNumber(parsedPhone)) return;
 
       Navigator.pushNamed(
         context,

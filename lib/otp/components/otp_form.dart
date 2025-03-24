@@ -16,10 +16,13 @@ class OtpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     List<int> verificationCode = [];
 
-    void onPinChanged(String pin) {
+    void onPinChanged(String pin, int index) {
       if (pin.isNotEmpty) {
-        verificationCode.add(int.parse(pin));
+        verificationCode.insert(index, int.parse(pin));
         FocusScope.of(context).nextFocus();
+      } else {
+        verificationCode.removeAt(index);
+        FocusScope.of(context).previousFocus();
       }
     }
 
@@ -31,8 +34,12 @@ class OtpForm extends StatelessWidget {
       forceResendingToken = forceResendingToken;
     }
 
+    if (context.mounted) {
+      OtpService.sendVerification(parsedPhone, forceResendingToken, cbCodeSent);
+    }
+
     void cbOnContinuePress() {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
     }
 
     return Form(
@@ -41,12 +48,12 @@ class OtpForm extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              OtpNumberBox(onChanged: onPinChanged),
-              OtpNumberBox(onChanged: onPinChanged),
-              OtpNumberBox(onChanged: onPinChanged),
-              OtpNumberBox(onChanged: onPinChanged),
-              OtpNumberBox(onChanged: onPinChanged),
-              OtpNumberBox(onChanged: onPinChanged),
+              OtpNumberBox(onChanged: onPinChanged, index: 0),
+              OtpNumberBox(onChanged: onPinChanged, index: 1),
+              OtpNumberBox(onChanged: onPinChanged, index: 2),
+              OtpNumberBox(onChanged: onPinChanged, index: 3),
+              OtpNumberBox(onChanged: onPinChanged, index: 4),
+              OtpNumberBox(onChanged: onPinChanged, index: 5),
             ],
           ),
           const SizedBox(height: 24),

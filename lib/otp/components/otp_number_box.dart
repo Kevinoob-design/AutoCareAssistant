@@ -5,9 +5,10 @@ import 'package:flutter/services.dart'
     show FilteringTextInputFormatter, LengthLimitingTextInputFormatter;
 
 class OtpNumberBox extends StatelessWidget {
-  const OtpNumberBox({super.key, required this.onChanged});
+  const OtpNumberBox({super.key, required this.onChanged, required this.index});
 
-  final Function(String pin) onChanged;
+  final Function(String pin, int index) onChanged;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class OtpNumberBox extends StatelessWidget {
       width: 54,
       child: TextFormField(
         onSaved: (pin) {},
-        onChanged: onChanged,
+        onChanged: (String pin) => onChanged(pin, index),
         textInputAction: TextInputAction.next,
         keyboardType: TextInputType.number,
         inputFormatters: [
