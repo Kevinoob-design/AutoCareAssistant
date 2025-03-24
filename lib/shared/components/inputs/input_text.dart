@@ -1,5 +1,5 @@
 import 'package:auto_care_assistant/shared/config/constants.dart'
-    show authOutlineInputBorder, borderSideColor;
+    show authOutlineInputBorder, kBorderSideColor;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show TextInputFormatter;
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +36,7 @@ class InputTextFormField extends StatelessWidget {
         hintText: hintText,
         labelText: labelText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintStyle: const TextStyle(color: borderSideColor),
+        hintStyle: const TextStyle(color: kBorderSideColor),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 24,
           vertical: 16,

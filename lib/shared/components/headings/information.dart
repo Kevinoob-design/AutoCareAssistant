@@ -1,5 +1,5 @@
 import 'package:auto_care_assistant/shared/config/constants.dart'
-    show borderSideColor;
+    show kBorderSideColor;
 import 'package:flutter/material.dart';
 
 class InformationText extends StatelessWidget {
@@ -12,7 +12,7 @@ class InformationText extends StatelessWidget {
     return Text(
       text,
       textAlign: TextAlign.center,
-      style: TextStyle(color: borderSideColor),
+      style: TextStyle(color: kBorderSideColor),
     );
   }
 }
