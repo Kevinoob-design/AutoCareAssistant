@@ -1,3 +1,6 @@
+import 'package:auto_care_assistant/home/home_screen.dart';
+import 'package:auto_care_assistant/splash/splash_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -56,8 +59,20 @@ class MyApp extends StatelessWidget {
           theme: lightTheme,
           darkTheme: darkTheme,
           themeMode: settingsController.themeMode,
-          initialRoute: SplashScreen.routeName,
+          // initialRoute: SplashScreen.routeName,
           routes: buildRoutes(settingsController: settingsController),
+          home: StreamBuilder(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return HomeScreen();
+              }
+              if (snapshot.hasError) {
+                return Scaffold(body: Text(snapshot.error.toString()));
+              }
+              return SplashScreen(controller: SplashController());
+            },
+          ),
         );
       },
     );

@@ -6,6 +6,7 @@ import 'package:auto_care_assistant/splash/components/splash_content.dart'
     show SplashContent;
 import 'package:auto_care_assistant/splash/splash_controller.dart'
     show SplashController;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -65,7 +66,10 @@ class _SplashScreenState extends State<SplashScreen> {
                         currentPage: currentPage,
                       ),
                       const Spacer(flex: 3),
-                      PrimaryButton(text: 'Continue', cb: () => {}),
+                      PrimaryButton(
+                        text: AppLocalizations.of(context)!.continueTextButton,
+                        cb: () => Navigator.pushNamed(context, '/signup'),
+                      ),
                       const Spacer(),
                     ],
                   ),

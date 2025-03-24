@@ -6,8 +6,11 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:auto_care_assistant/app.dart';
+import 'package:auto_care_assistant/firebase_options.dart'
+    show DefaultFirebaseOptions;
 import 'package:auto_care_assistant/settings/settings_controller.dart';
 import 'package:auto_care_assistant/settings/settings_service.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 
@@ -17,6 +20,10 @@ void main() async {
 
   testWidgets('Splash Screen smoke test', (WidgetTester tester) async {
     mockNetworkImagesFor(() async {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+
       // Build our app and trigger a frame.
       await tester.pumpWidget(MyApp(settingsController: settingsController));
 
