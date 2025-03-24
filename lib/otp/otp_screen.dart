@@ -1,10 +1,7 @@
 import 'package:auto_care_assistant/otp/components/otp_form.dart';
 import 'package:auto_care_assistant/otp/model/otp_args.dart' show OtpArguments;
-import 'package:auto_care_assistant/shared/components/headings/information.dart'
-    show InformationText;
+import 'package:auto_care_assistant/shared/components/headings/information.dart' show InformationText;
 import 'package:auto_care_assistant/shared/components/headings/subtitle.dart';
-import 'package:auto_care_assistant/shared/config/constants.dart'
-    show borderSideColor;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -30,19 +27,11 @@ class OtpScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   InformationText(
                     text:
-                        '${AppLocalizations.of(context)!.otpSentMessage} ${args.parsedPhone} \n${AppLocalizations.of(context)!.otpExpirationMessage} 00:30',
+                        '${AppLocalizations.of(context)!.otpSentMessage} ${args.parsedPhone} \n${AppLocalizations.of(context)!.otpExpirationMessage} 00:60',
                   ),
                   const SizedBox(height: 16),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.20),
-                  const OtpForm(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.2),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      AppLocalizations.of(context)!.otpResentMessage,
-                      style: TextStyle(color: borderSideColor),
-                    ),
-                  ),
+                  OtpForm(parsedPhone: args.parsedPhone),
                 ],
               ),
             ),
