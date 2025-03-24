@@ -12,7 +12,7 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String parsedPhone = '+18491001234';
+    String parsedPhone = '';
 
     void parsePhone(dynamic phone) {
       parsedPhone = '+$phone';

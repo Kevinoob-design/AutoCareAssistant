@@ -72,6 +72,10 @@
   "@signUpOrTextOption": {
     "description": "Optional OR text"
   },
+  "otpSentTitle": "OTP Verification",
+  "@otpSentTitle": {
+    "description": "OTP screen title"
+  },
   "otpSentMessage": "We sent your code to",
   "@otpSentMessage": {
     "description": "OTP Sent message"

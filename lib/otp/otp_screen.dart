@@ -24,7 +24,7 @@ class OtpScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  Subtitle(text: "OTP Verification"),
+                  Subtitle(text: AppLocalizations.of(context)!.otpSentTitle),
                   const SizedBox(height: 8),
                   InformationText(
                     text:

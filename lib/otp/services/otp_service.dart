@@ -1,10 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart'
-    show
-        FirebaseAuth,
-        FirebaseAuthException,
-        PhoneAuthCredential,
-        PhoneAuthProvider,
-        PhoneCodeSent;
+    show FirebaseAuth, PhoneAuthCredential, PhoneAuthProvider, PhoneCodeSent;
 import 'package:firebase_core/firebase_core.dart' show Firebase;
 import 'package:flutter/material.dart';
 
@@ -24,9 +19,8 @@ class OtpService {
       phoneNumber: parsedPhone,
       verificationCompleted: cbCompleted,
       codeSent: cbCodeSent,
-      verificationFailed: (FirebaseAuthException e) => print(e),
-      codeAutoRetrievalTimeout:
-          (String verificationId) => print(verificationId),
+      verificationFailed: print,
+      codeAutoRetrievalTimeout: print,
     );
   }
 
