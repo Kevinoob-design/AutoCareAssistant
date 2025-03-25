@@ -1,14 +1,12 @@
 import 'package:auto_care_assistant/screens/init_screen.dart' show InitScreen;
-import 'package:auto_care_assistant/screens/signUp/signUp_screen.dart';
-import 'package:auto_care_assistant/screens/signup/signup_controller.dart'
-    show SignupController;
+import 'package:auto_care_assistant/screens/signup/signUp_screen.dart';
+import 'package:auto_care_assistant/screens/signup/signup_controller.dart' show SignupController;
 import 'package:auto_care_assistant/screens/splash/splash_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:auto_care_assistant/screens/splash/splash_screen.dart'
-    show SplashScreen;
+import 'package:auto_care_assistant/screens/splash/splash_screen.dart' show SplashScreen;
 import 'screens/settings/settings_controller.dart' show SettingsController;
 import 'shared/config/theme.dart' show AppTheme;
 import 'shared/routes/routes.dart' show buildRoutes;
@@ -53,8 +51,7 @@ class MyApp extends StatelessWidget {
           //
           // The appTitle is defined in .arb files found in the localization
           // directory.
-          onGenerateTitle:
-              (BuildContext context) => AppLocalizations.of(context)!.appTitle,
+          onGenerateTitle: (BuildContext context) => AppLocalizations.of(context)!.appTitle,
 
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
