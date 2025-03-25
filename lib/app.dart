@@ -1,5 +1,5 @@
 import 'package:auto_care_assistant/screens/init_screen.dart' show InitScreen;
-import 'package:auto_care_assistant/screens/signup/signUp_screen.dart';
+import 'package:auto_care_assistant/screens/signup/signup_screen.dart';
 import 'package:auto_care_assistant/screens/signup/signup_controller.dart'
     show SignupController;
 import 'package:auto_care_assistant/screens/splash/splash_controller.dart';
