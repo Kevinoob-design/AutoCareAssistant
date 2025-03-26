@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/discount_banner.dart';
+import 'components/my_cars_banner.dart';
 import 'components/home_header.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,10 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          child: Column(children: [HomeHeader(), DiscountBanner()]),
-        ),
+        child: SingleChildScrollView(padding: EdgeInsets.symmetric(vertical: 16), child: Column(children: [HomeHeader(), MyCarsBanner()])),
       ),
     );
   }
