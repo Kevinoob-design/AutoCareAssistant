@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(padding: EdgeInsets.symmetric(vertical: 16), child: Column(children: [HomeHeader(), MyCarsBanner()])),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Column(children: [HomeHeader(), MyCarsBanner()]),
+        ),
       ),
     );
   }
