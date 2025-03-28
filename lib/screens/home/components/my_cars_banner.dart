@@ -21,23 +21,14 @@ class MyCarsBanner extends StatelessWidget {
           focusColor: kPrimaryColor.withValues(alpha: 0.1),
           highlightColor: kPrimaryColor.withValues(alpha: 0.1),
           hoverColor: kPrimaryColor.withValues(alpha: 0.1),
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, '/my-cars'),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             child: const ListTile(
               contentPadding: EdgeInsets.zero,
-              leading: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(Icons.car_repair, color: Color(0xFF4A3298)),
-              ),
-              title: Text(
-                "My Cars",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "View all my cars",
-                style: TextStyle(color: Colors.white),
-              ),
+              leading: CircleAvatar(backgroundColor: Colors.white, child: Icon(Icons.car_repair, color: Color(0xFF4A3298))),
+              title: Text("My Cars", style: TextStyle(color: Colors.white, fontSize: 20)),
+              subtitle: Text("View all my cars", style: TextStyle(color: Colors.white)),
             ),
           ),
         ),
