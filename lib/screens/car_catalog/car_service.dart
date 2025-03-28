@@ -1,4 +1,5 @@
-import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
+import 'package:auto_care_assistant/screens/car_catalog/models/car.dart'
+    show Car;
 
 class CarService {
   static List<Car> getCars() {
@@ -17,7 +18,13 @@ class CarService {
         plaque: "KFW-5600",
         description: "my car 2",
       ),
-      Car(id: 3, images: "https://i.postimg.cc/1XjYwvbv/glap.png", title: "Gloves XC Omega - Polygon", plaque: "KFW-5600", description: "my car 3"),
+      Car(
+        id: 3,
+        images: "https://i.postimg.cc/1XjYwvbv/glap.png",
+        title: "Gloves XC Omega - Polygon",
+        plaque: "KFW-5600",
+        description: "my car 3",
+      ),
     ];
 
     return demoCars;

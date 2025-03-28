@@ -1,6 +1,9 @@
-import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show CarService;
-import 'package:auto_care_assistant/screens/car_catalog/components/bottom_add_car.dart' show BottomNavBarAddCar;
-import 'package:auto_care_assistant/screens/car_catalog/components/car_card.dart' show CarCard;
+import 'package:auto_care_assistant/screens/car_catalog/car_service.dart'
+    show CarService;
+import 'package:auto_care_assistant/screens/car_catalog/components/bottom_add_car.dart'
+    show BottomNavBarAddCar;
+import 'package:auto_care_assistant/screens/car_catalog/components/car_card.dart'
+    show CarCard;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,7 +21,15 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Column(children: [const Text("Your Cars"), Text("${CarService.getCars().length} cars", style: Theme.of(context).textTheme.bodySmall)]),
+        title: Column(
+          children: [
+            const Text("Your Cars"),
+            Text(
+              "${CarService.getCars().length} cars",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -37,8 +48,16 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
                   },
                   background: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(color: const Color(0xFFFFE6E6), borderRadius: BorderRadius.circular(15)),
-                    child: Row(children: [const Spacer(), SvgPicture.asset("assets/icons/Trash-icon.svg")]),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFE6E6),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      children: [
+                        const Spacer(),
+                        SvgPicture.asset("assets/icons/Trash-icon.svg"),
+                      ],
+                    ),
                   ),
                   child: CarCard(car: CarService.getCars()[index]),
                 ),
