@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'settings/settings_controller.dart' show SettingsController;
-import 'settings/settings_service.dart' show SettingsService;
+import 'shared/firebase/firebase_options.dart';
+import 'screens/settings/settings_controller.dart' show SettingsController;
+import 'screens/settings/settings_service.dart' show SettingsService;
 import 'app.dart';
 
 void main() async {

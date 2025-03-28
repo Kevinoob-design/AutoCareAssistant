@@ -14,7 +14,7 @@ class ImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
+    return Image.asset(
       image,
       fit: BoxFit.contain,
       height: height,
