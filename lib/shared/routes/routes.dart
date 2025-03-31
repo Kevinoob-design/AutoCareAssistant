@@ -1,4 +1,5 @@
 import 'package:auto_care_assistant/screens/car_catalog/my_cars_screen.dart' show MyCarsScreen;
+import 'package:auto_care_assistant/screens/car_edit/car_edit_screen.dart' show CarEditScreen;
 import 'package:auto_care_assistant/screens/home/home_screen.dart' show HomeScreen;
 import 'package:auto_care_assistant/screens/otp/otp_screen.dart' show OtpScreen;
 import 'package:auto_care_assistant/screens/settings/settings_controller.dart' show SettingsController;
@@ -18,6 +19,7 @@ Map<String, WidgetBuilder> buildRoutes({required SettingsController settingsCont
     OtpScreen.routeName: (context) => OtpScreen(),
     HomeScreen.routeName: (context) => HomeScreen(),
     MyCarsScreen.routeName: (context) => MyCarsScreen(),
+    CarEditScreen.routeName: (context) => CarEditScreen(),
   };
 
   return routes;

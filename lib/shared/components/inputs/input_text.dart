@@ -15,9 +15,11 @@ class InputTextFormField extends StatelessWidget {
     this.inputFormatter = const [],
     this.controller,
     this.validator,
+    this.initialValue,
   });
 
   final TextEditingController? controller;
+  final String? initialValue;
   final String? Function(String?)? validator;
   final String hintText;
   final String labelText;
@@ -30,6 +32,7 @@ class InputTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
       controller: controller,
       validator: validator,
       onSaved: onSaved,

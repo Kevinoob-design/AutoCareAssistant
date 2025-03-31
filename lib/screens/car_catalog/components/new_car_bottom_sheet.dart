@@ -16,7 +16,6 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTicker
   int currentPage = 0;
   PageController pageController = PageController(initialPage: 0);
 
-  Animation<double>? animation;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final Map<String, dynamic> formData = {};
 
@@ -59,7 +58,7 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTicker
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

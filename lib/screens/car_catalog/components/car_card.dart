@@ -11,6 +11,8 @@ class CarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      spacing: 12,
       children: [
         SizedBox(
           width: 95,
@@ -23,7 +25,6 @@ class CarCard extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,6 +35,8 @@ class CarCard extends StatelessWidget {
             ),
           ],
         ),
+        const Spacer(),
+        IconButton(icon: Icon(Icons.edit), onPressed: () => Navigator.pushNamed(context, '/car-edit', arguments: car)),
       ],
     );
   }

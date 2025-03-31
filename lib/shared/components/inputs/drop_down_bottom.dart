@@ -15,8 +15,10 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
     this.inputType = TextInputType.text,
     this.inputFormatter = const [],
     this.validator,
+    this.initialValue,
   });
 
+  final T? initialValue;
   final String? Function(T?)? validator;
   final List<DropdownMenuItem<T>> items;
   final String hintText;
@@ -30,6 +32,7 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<T>(
+      value: initialValue,
       validator: validator,
       onSaved: onSaved,
       onChanged: onChanged,
