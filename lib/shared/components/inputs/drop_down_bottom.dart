@@ -14,8 +14,10 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
     this.suffixIcon = '',
     this.inputType = TextInputType.text,
     this.inputFormatter = const [],
+    this.validator,
   });
 
+  final String? Function(T?)? validator;
   final List<DropdownMenuItem<T>> items;
   final String hintText;
   final String labelText;
@@ -28,6 +30,7 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<T>(
+      validator: validator,
       onSaved: onSaved,
       onChanged: onChanged,
       borderRadius: BorderRadius.circular(12),

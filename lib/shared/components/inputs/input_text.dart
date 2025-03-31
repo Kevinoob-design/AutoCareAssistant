@@ -13,8 +13,12 @@ class InputTextFormField extends StatelessWidget {
     this.suffixIcon = '',
     this.inputType = TextInputType.text,
     this.inputFormatter = const [],
+    this.controller,
+    this.validator,
   });
 
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
   final String hintText;
   final String labelText;
   final FormFieldSetter onSaved;
@@ -26,6 +30,8 @@ class InputTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: validator,
       onSaved: onSaved,
       onChanged: onChanged,
       textInputAction: TextInputAction.next,

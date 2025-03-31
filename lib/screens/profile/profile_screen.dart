@@ -24,7 +24,11 @@ class ProfileScreen extends StatelessWidget {
               press: () => Navigator.pushNamed(context, '/settings'),
             ),
             ProfileMenu(text: 'Help Center', icon: 'assets/icons/Question mark.svg', press: () {}),
-            ProfileMenu(text: 'Log Out', icon: 'assets/icons/Log out.svg', press: () => FirebaseAuth.instance.signOut()),
+            ProfileMenu(
+              text: 'Log Out',
+              icon: 'assets/icons/Log out.svg',
+              press: () => FirebaseAuth.instance.signOut(),
+            ),
             ProfileMenu(
               text: 'Reset Defaults',
               icon: 'assets/icons/Log out.svg',

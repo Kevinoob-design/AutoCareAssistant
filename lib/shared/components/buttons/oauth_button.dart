@@ -22,7 +22,11 @@ class OauthSignupButton extends StatelessWidget {
           side: BorderSide(color: kBorderSideColor, width: 1),
         ),
       ),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, spacing: 6, children: [SvgPicture.asset(icon), Text(text)]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 6,
+        children: [SvgPicture.asset(icon), Text(text)],
+      ),
     );
   }
 }

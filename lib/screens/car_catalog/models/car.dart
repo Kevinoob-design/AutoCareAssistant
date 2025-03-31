@@ -8,10 +8,10 @@ class Car {
   final CarType carType;
   final String plaque;
   final String chassisNumber;
-  final String distanceTraveled;
+  final double distanceTraveled;
   final String make;
   final String model;
-  final String year;
+  final int year;
   final DistanceMeasurement distanceMeasurement;
   final DateTime lastServiceDate;
 

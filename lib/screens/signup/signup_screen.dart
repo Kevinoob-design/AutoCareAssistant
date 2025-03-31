@@ -25,7 +25,10 @@ class SignUpScreen extends StatelessWidget {
 
       final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
 
-      final credential = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
 

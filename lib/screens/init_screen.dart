@@ -1,4 +1,5 @@
-import 'package:auto_care_assistant/shared/components/salomon_bottom_bar.dart' show SalomonBottomBar, SalomonBottomBarItem;
+import 'package:auto_care_assistant/shared/components/salomon_bottom_bar.dart'
+    show SalomonBottomBar, SalomonBottomBarItem;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_care_assistant/screens/home/home_screen.dart';

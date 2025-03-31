@@ -5,7 +5,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class OtpForm extends StatelessWidget {
-  const OtpForm({super.key, required this.parsedPhone, required this.verificationId, required this.forceResendingToken});
+  const OtpForm({
+    super.key,
+    required this.parsedPhone,
+    required this.verificationId,
+    required this.forceResendingToken,
+  });
 
   final String parsedPhone;
   final String verificationId;

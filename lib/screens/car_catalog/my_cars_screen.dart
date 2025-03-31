@@ -49,7 +49,10 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
                               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                               child: const Text('DELETE'),
                             ),
-                            ElevatedButton(onPressed: () => Navigator.of(context).pop(false), child: const Text('CANCEL')),
+                            ElevatedButton(
+                              onPressed: () => Navigator.of(context).pop(false),
+                              child: const Text('CANCEL'),
+                            ),
                           ],
                         );
                       },

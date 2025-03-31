@@ -11,20 +11,32 @@ class NewCarBottomSheet extends StatefulWidget {
   State<NewCarBottomSheet> createState() => _NewCarBottomSheetState();
 }
 
-class _NewCarBottomSheetState extends State<NewCarBottomSheet> {
+class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTickerProviderStateMixin {
   CarType? selectedCarType;
-  PageController controller = PageController(initialPage: 0);
+  int currentPage = 0;
+  PageController pageController = PageController(initialPage: 0);
+
+  Animation<double>? animation;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final Map<String, dynamic> formData = {};
 
-  void onSelectedCarType(CarType carType) {
+  void onSelectedCarType(CarType carType) async {
     setState(() {
       selectedCarType = carType;
     });
-    controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.ease);
+    await pageController.nextPage(duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  void onFormSaved() {
+  void onPreviousPage() async {
+    setState(() {
+      selectedCarType = null;
+    });
+    await pageController.previousPage(duration: Duration(milliseconds: 300), curve: Curves.ease);
+  }
+
+  void onFormSaved() async {
+    if (formKey.currentState!.validate() == false) return;
+
     formKey.currentState!.save();
 
     Car car = Car(
@@ -34,29 +46,32 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> {
       carType: selectedCarType!,
       make: formData['make'],
       model: formData['model'],
-      year: formData['year'],
+      year: int.parse(formData['year']),
       chassisNumber: formData['chassisNumber'],
-      distanceTraveled: formData['distanceTraveled'],
+      distanceTraveled: double.parse(formData['distanceTraveled']),
       distanceMeasurement: formData['distanceMeasurement'],
-      lastServiceDate: DateTime(formData['lastServiceDate']),
+      lastServiceDate: DateTime.parse(formData['lastServiceDate']),
     );
 
-    print(car.toString());
+    Navigator.pop(context, car);
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: PageView(
-                controller: controller,
+                controller: pageController,
                 physics: NeverScrollableScrollPhysics(),
-                children: [CarTypeSelection(cb: onSelectedCarType), NewCarForm(formKey: formKey, formData: formData)],
+                children: [
+                  CarTypeSelection(cb: onSelectedCarType),
+                  NewCarForm(formKey: formKey, formData: formData, previousPageCb: onPreviousPage),
+                ],
               ),
             ),
             if (selectedCarType != null)
