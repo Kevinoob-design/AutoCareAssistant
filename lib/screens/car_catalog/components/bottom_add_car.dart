@@ -15,31 +15,25 @@ class BottomNavBarAddCar extends StatelessWidget {
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
       ),
       child: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () async {
-                  Car? car = await showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    useSafeArea: true,
-                    showDragHandle: true,
-                    builder: (context) => NewCarBottomSheet(),
-                  );
+        child: ElevatedButton(
+          onPressed: () async {
+            Car? car = await showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              useSafeArea: true,
+              showDragHandle: true,
+              builder: (context) => NewCarBottomSheet(),
+            );
 
-                  if (car is Car) CarService.saveCar(car);
-                },
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 48),
-                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
-                ),
-                child: const Text('Register a new Car'),
-              ),
-            ),
-          ],
+            if (car is Car) CarService.saveCar(car);
+          },
+          style: ElevatedButton.styleFrom(
+            elevation: 0,
+            foregroundColor: Colors.white,
+            minimumSize: const Size(double.infinity, 48),
+            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+          ),
+          child: const Text('Register a new Car'),
         ),
       ),
     );

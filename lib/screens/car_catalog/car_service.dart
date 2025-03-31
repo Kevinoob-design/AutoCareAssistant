@@ -19,6 +19,18 @@ class CarService {
     // CarType(type: 'Taxi', icon: 'assets/icons/Taxi.svg'),
   ];
 
+  static Future<int> getCarsCount() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseFirestore db = FirebaseFirestore.instance;
+
+    return db
+        .collection('cars')
+        .where('uid', isEqualTo: auth.currentUser!.uid)
+        .count()
+        .get()
+        .then((res) => res.count ?? 0);
+  }
+
   static void saveCar(Car car) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     FirebaseFirestore db = FirebaseFirestore.instance;

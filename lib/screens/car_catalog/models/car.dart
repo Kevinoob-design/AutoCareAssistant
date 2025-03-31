@@ -7,7 +7,7 @@ class Car {
   final CarType carType;
   final String plaque;
   final String chassisNumber;
-  final double distanceTraveled;
+  final int distanceTraveled;
   final String make;
   final String model;
   final int year;

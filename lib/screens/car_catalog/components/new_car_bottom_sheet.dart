@@ -1,6 +1,6 @@
 import 'package:auto_care_assistant/screens/car_catalog/components/car_type_selection.dart' show CarTypeSelection;
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
-import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car, DistanceMeasurement;
+import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
 import 'package:flutter/material.dart';
 
@@ -47,7 +47,7 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTicker
       model: formData['model'],
       year: int.parse(formData['year']),
       chassisNumber: formData['chassisNumber'],
-      distanceTraveled: double.parse(formData['distanceTraveled']),
+      distanceTraveled: int.parse(formData['distanceTraveled']),
       distanceMeasurement: formData['distanceMeasurement'],
       lastServiceDate: DateTime.parse(formData['lastServiceDate']),
     );
