@@ -11,14 +11,11 @@ class SectionTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-        ),
+        Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
         TextButton(
           onPressed: press,
           style: TextButton.styleFrom(foregroundColor: Colors.grey),
-          child: const Text("See more"),
+          child: const Text('See more'),
         ),
       ],
     );

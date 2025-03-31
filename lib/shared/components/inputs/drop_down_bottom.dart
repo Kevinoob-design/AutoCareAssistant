@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show TextInputFormatter;
 import 'package:flutter_svg/svg.dart';
 
-class InputTextFormField extends StatelessWidget {
-  const InputTextFormField({
+class InputDropDownBottomFormField<T> extends StatelessWidget {
+  const InputDropDownBottomFormField({
     super.key,
-    this.hintText = '',
-    this.labelText = '',
+    required this.items,
     required this.onSaved,
     required this.onChanged,
+    this.labelText = '',
+    this.hintText = '',
     this.suffixIcon = '',
     this.inputType = TextInputType.text,
     this.inputFormatter = const [],
   });
 
+  final List<DropdownMenuItem<T>> items;
   final String hintText;
   final String labelText;
   final FormFieldSetter onSaved;
@@ -25,15 +27,14 @@ class InputTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return DropdownButtonFormField<T>(
       onSaved: onSaved,
       onChanged: onChanged,
-      textInputAction: TextInputAction.next,
-      keyboardType: inputType,
-      inputFormatters: inputFormatter,
+      borderRadius: BorderRadius.circular(12),
+      icon: const Icon(Icons.keyboard_arrow_down),
       decoration: InputDecoration(
-        hintText: hintText.isEmpty ? null : hintText,
         labelText: labelText.isEmpty ? null : labelText,
+        hintText: hintText.isEmpty ? null : hintText,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintStyle: const TextStyle(color: kBorderSideColor),
         contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -42,6 +43,7 @@ class InputTextFormField extends StatelessWidget {
         enabledBorder: authOutlineInputBorder,
         focusedBorder: authOutlineInputBorder.copyWith(borderSide: const BorderSide(color: Color(0xFFFF7643))),
       ),
+      items: items,
     );
   }
 }

@@ -1,19 +1,11 @@
-import 'package:auto_care_assistant/screens/otp/components/otp_number_box.dart'
-    show OtpNumberBox;
-import 'package:auto_care_assistant/screens/otp/services/otp_service.dart'
-    show OtpService;
-import 'package:auto_care_assistant/shared/config/constants.dart'
-    show kBorderSideColor, primaryColor;
+import 'package:auto_care_assistant/screens/otp/components/otp_number_box.dart' show OtpNumberBox;
+import 'package:auto_care_assistant/screens/otp/services/otp_service.dart' show OtpService;
+import 'package:auto_care_assistant/shared/config/constants.dart' show kBorderSideColor, primaryColor;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class OtpForm extends StatelessWidget {
-  const OtpForm({
-    super.key,
-    required this.parsedPhone,
-    required this.verificationId,
-    required this.forceResendingToken,
-  });
+  const OtpForm({super.key, required this.parsedPhone, required this.verificationId, required this.forceResendingToken});
 
   final String parsedPhone;
   final String verificationId;
@@ -61,34 +53,20 @@ class OtpForm extends StatelessWidget {
           const SizedBox(height: 24),
           ElevatedButton(
             onPressed:
-                () => OtpService.signInWithSmsCode(
-                  codeSentVerificationId,
-                  verificationCode.join(),
-                  cbOnContinuePress,
-                ),
+                () => OtpService.signInWithSmsCode(codeSentVerificationId, verificationCode.join(), cbOnContinuePress),
             style: ElevatedButton.styleFrom(
               elevation: 0,
               backgroundColor: primaryColor,
               foregroundColor: Colors.white,
               minimumSize: const Size(double.infinity, 48),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
-              ),
+              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
             ),
             child: Text(AppLocalizations.of(context)!.continueTextButton),
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.2),
           TextButton(
-            onPressed:
-                () => OtpService.sendVerification(
-                  parsedPhone,
-                  codeSentForceResendingToken,
-                  cbCodeSent,
-                ),
-            child: Text(
-              AppLocalizations.of(context)!.otpResentMessage,
-              style: TextStyle(color: kBorderSideColor),
-            ),
+            onPressed: () => OtpService.sendVerification(parsedPhone, codeSentForceResendingToken, cbCodeSent),
+            child: Text(AppLocalizations.of(context)!.otpResentMessage, style: TextStyle(color: kBorderSideColor)),
           ),
         ],
       ),

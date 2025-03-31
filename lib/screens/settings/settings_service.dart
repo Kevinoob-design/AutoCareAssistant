@@ -11,8 +11,7 @@ class SettingsService {
   Future<bool> skipSplashScreen() async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
 
-    final bool skipSplashScreen =
-        preferences.getBool('skipSplashScreen') ?? false;
+    final bool skipSplashScreen = preferences.getBool('skipSplashScreen') ?? false;
 
     return skipSplashScreen;
   }

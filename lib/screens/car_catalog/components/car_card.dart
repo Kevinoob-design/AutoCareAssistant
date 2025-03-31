@@ -1,6 +1,7 @@
-import 'package:auto_care_assistant/screens/car_catalog/models/car.dart'
-    show Car;
+import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
+import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart' show SvgPicture;
 
 class CarCard extends StatelessWidget {
   const CarCard({super.key, required this.car});
@@ -12,16 +13,13 @@ class CarCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 88,
+          width: 95,
           child: AspectRatio(
-            aspectRatio: 0.88,
+            aspectRatio: 1,
             child: Container(
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF5F6F9),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Image.network(car.images),
+              decoration: BoxDecoration(color: const Color(0xFFF5F6F9), borderRadius: BorderRadius.circular(15)),
+              child: SvgPicture.asset(car.carType.icon),
             ),
           ),
         ),
@@ -32,13 +30,7 @@ class CarCard extends StatelessWidget {
             Text(car.title, style: const TextStyle(fontSize: 16), maxLines: 2),
             const SizedBox(height: 8),
             Text.rich(
-              TextSpan(
-                text: "\$${car.plaque}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFFF7643),
-                ),
-              ),
+              TextSpan(text: car.plaque, style: const TextStyle(fontWeight: FontWeight.w600, color: kPrimaryColor)),
             ),
           ],
         ),

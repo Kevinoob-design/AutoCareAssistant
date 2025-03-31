@@ -1,8 +1,6 @@
 import 'package:auto_care_assistant/screens/otp/components/otp_form.dart';
-import 'package:auto_care_assistant/screens/otp/model/otp_args.dart'
-    show OtpArguments;
-import 'package:auto_care_assistant/shared/components/headings/information.dart'
-    show InformationText;
+import 'package:auto_care_assistant/screens/otp/model/otp_args.dart' show OtpArguments;
+import 'package:auto_care_assistant/shared/components/headings/information.dart' show InformationText;
 import 'package:auto_care_assistant/shared/components/headings/subtitle.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';

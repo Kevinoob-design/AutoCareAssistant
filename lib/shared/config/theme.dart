@@ -5,7 +5,7 @@ class AppTheme {
   static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
       scaffoldBackgroundColor: Colors.white,
-      fontFamily: "Muli",
+      fontFamily: 'Muli',
       appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0,
@@ -31,9 +31,7 @@ class AppTheme {
           backgroundColor: kPrimaryColor,
           foregroundColor: Colors.white,
           minimumSize: const Size(double.infinity, 48),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-          ),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
         ),
       ),
     );

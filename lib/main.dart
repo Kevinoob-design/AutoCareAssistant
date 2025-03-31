@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'shared/firebase/firebase_options.dart';
-import 'screens/settings/settings_controller.dart' show SettingsController;
-import 'screens/settings/settings_service.dart' show SettingsService;
-import 'app.dart';
+import 'package:auto_care_assistant/shared/firebase/firebase_options.dart';
+import 'package:auto_care_assistant/screens/settings/settings_controller.dart' show SettingsController;
+import 'package:auto_care_assistant/screens/settings/settings_service.dart' show SettingsService;
+import 'package:auto_care_assistant/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

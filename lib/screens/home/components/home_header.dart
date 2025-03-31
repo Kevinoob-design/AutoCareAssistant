@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'icon_btn_with_counter.dart';
-import 'search_field.dart';
+import 'package:auto_care_assistant/screens/home/components/icon_btn_with_counter.dart';
+import 'package:auto_care_assistant/screens/home/components/search_field.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -14,11 +14,7 @@ class HomeHeader extends StatelessWidget {
         children: [
           const Expanded(child: SearchField()),
           const SizedBox(width: 16),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
-            press: () {},
-          ),
+          IconBtnWithCounter(svgSrc: 'assets/icons/Bell.svg', numOfitem: 3, press: () {}),
         ],
       ),
     );

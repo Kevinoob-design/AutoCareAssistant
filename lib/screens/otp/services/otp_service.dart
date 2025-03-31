@@ -1,5 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart'
-    show FirebaseAuth, PhoneAuthCredential, PhoneAuthProvider, PhoneCodeSent;
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, PhoneAuthCredential, PhoneAuthProvider, PhoneCodeSent;
 import 'package:firebase_core/firebase_core.dart' show Firebase;
 import 'package:flutter/material.dart';
 
@@ -8,11 +7,7 @@ class OtpService {
 
   static void cbCompleted(PhoneAuthCredential credential) {}
 
-  static Future<void> sendVerification(
-    String parsedPhone,
-    int? codeSentForceResendingToken,
-    PhoneCodeSent cbCodeSent,
-  ) {
+  static Future<void> sendVerification(String parsedPhone, int? codeSentForceResendingToken, PhoneCodeSent cbCodeSent) {
     return auth.verifyPhoneNumber(
       timeout: const Duration(seconds: 60),
       forceResendingToken: codeSentForceResendingToken,
@@ -24,17 +19,10 @@ class OtpService {
     );
   }
 
-  static void signInWithSmsCode(
-    String verificationId,
-    String smsCode,
-    VoidCallback cb,
-  ) async {
+  static void signInWithSmsCode(String verificationId, String smsCode, VoidCallback cb) async {
     if (smsCode.length != 6 || verificationId.isEmpty) return;
 
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-      verificationId: verificationId,
-      smsCode: smsCode,
-    );
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);
 
     await FirebaseAuth.instance.signInWithCredential(credential);
 

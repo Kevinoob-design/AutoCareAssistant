@@ -67,35 +67,22 @@ class SalomonBottomBar extends StatelessWidget {
         child: Row(
           /// Using a different alignment when there are 2 items or less
           /// so it behaves the same as BottomNavigationBar.
-          mainAxisAlignment:
-              items.length <= 2
-                  ? MainAxisAlignment.spaceEvenly
-                  : MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: items.length <= 2 ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.spaceBetween,
           children: [
             for (final item in items)
               TweenAnimationBuilder<double>(
-                tween: Tween(
-                  end: items.indexOf(item) == currentIndex ? 1.0 : 0.0,
-                ),
+                tween: Tween(end: items.indexOf(item) == currentIndex ? 1.0 : 0.0),
                 curve: curve,
                 duration: duration,
                 builder: (context, t, _) {
-                  final selectedColor =
-                      item.selectedColor ??
-                      selectedItemColor ??
-                      theme.primaryColor;
+                  final selectedColor = item.selectedColor ?? selectedItemColor ?? theme.primaryColor;
 
-                  final unselectedColor =
-                      item.unselectedColor ??
-                      unselectedItemColor ??
-                      theme.iconTheme.color;
+                  final unselectedColor = item.unselectedColor ?? unselectedItemColor ?? theme.iconTheme.color;
 
                   return Material(
                     color: Color.lerp(
                       selectedColor.withValues(alpha: 0.0),
-                      selectedColor.withValues(
-                        alpha: selectedColorOpacity ?? 0.1,
-                      ),
+                      selectedColor.withValues(alpha: selectedColorOpacity ?? 0.1),
                       t,
                     ),
                     shape: itemShape,
@@ -116,18 +103,8 @@ class SalomonBottomBar extends StatelessWidget {
                         child: Row(
                           children: [
                             IconTheme(
-                              data: IconThemeData(
-                                color: Color.lerp(
-                                  unselectedColor,
-                                  selectedColor,
-                                  t,
-                                ),
-                                size: 24,
-                              ),
-                              child:
-                                  items.indexOf(item) == currentIndex
-                                      ? item.activeIcon ?? item.icon
-                                      : item.icon,
+                              data: IconThemeData(color: Color.lerp(unselectedColor, selectedColor, t), size: 24),
+                              child: items.indexOf(item) == currentIndex ? item.activeIcon ?? item.icon : item.icon,
                             ),
                             ClipRect(
                               clipBehavior: Clip.antiAlias,
@@ -142,23 +119,12 @@ class SalomonBottomBar extends StatelessWidget {
                                   widthFactor: t,
                                   child: Padding(
                                     padding:
-                                        Directionality.of(context) ==
-                                                TextDirection.ltr
-                                            ? EdgeInsets.only(
-                                              left: itemPadding.left / 2,
-                                              right: itemPadding.right,
-                                            )
-                                            : EdgeInsets.only(
-                                              left: itemPadding.left,
-                                              right: itemPadding.right / 2,
-                                            ),
+                                        Directionality.of(context) == TextDirection.ltr
+                                            ? EdgeInsets.only(left: itemPadding.left / 2, right: itemPadding.right)
+                                            : EdgeInsets.only(left: itemPadding.left, right: itemPadding.right / 2),
                                     child: DefaultTextStyle(
                                       style: TextStyle(
-                                        color: Color.lerp(
-                                          selectedColor.withValues(alpha: 0.0),
-                                          selectedColor,
-                                          t,
-                                        ),
+                                        color: Color.lerp(selectedColor.withValues(alpha: 0.0), selectedColor, t),
                                         fontWeight: FontWeight.w600,
                                       ),
                                       child: item.title,

@@ -1,11 +1,7 @@
-import 'package:auto_care_assistant/screens/otp/model/otp_args.dart'
-    show OtpArguments;
-import 'package:auto_care_assistant/screens/otp/services/otp_service.dart'
-    show OtpService;
-import 'package:auto_care_assistant/shared/components/buttons/primary_button.dart'
-    show PrimaryButton;
-import 'package:auto_care_assistant/shared/components/inputs/input_text.dart'
-    show InputTextFormField;
+import 'package:auto_care_assistant/screens/otp/model/otp_args.dart' show OtpArguments;
+import 'package:auto_care_assistant/screens/otp/services/otp_service.dart' show OtpService;
+import 'package:auto_care_assistant/shared/components/buttons/primary_button.dart' show PrimaryButton;
+import 'package:auto_care_assistant/shared/components/inputs/input_text.dart' show InputTextFormField;
 import 'package:flutter/services.dart' show FilteringTextInputFormatter;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
@@ -37,15 +33,7 @@ class SignUpForm extends StatelessWidget {
     }
 
     void cbCodeSent(String verificationId, int? forceResendingToken) {
-      Navigator.pushNamed(
-        context,
-        '/otp',
-        arguments: OtpArguments(
-          parsedPhone,
-          verificationId,
-          forceResendingToken,
-        ),
-      );
+      Navigator.pushNamed(context, '/otp', arguments: OtpArguments(parsedPhone, verificationId, forceResendingToken));
     }
 
     void goToOtp() async {
@@ -62,15 +50,11 @@ class SignUpForm extends StatelessWidget {
             labelText: AppLocalizations.of(context)!.formPhoneLabel,
             onChanged: parsePhone,
             onSaved: (phone) => {},
-            suffixIcon: '/assets/svgs/mail.svg',
-            inputType: TextInputType.phone,
+            suffixIcon: Icons.phone.toString(),
             inputFormatter: [FilteringTextInputFormatter.digitsOnly],
           ),
           const SizedBox(height: 32),
-          PrimaryButton(
-            text: AppLocalizations.of(context)!.continueTextButton,
-            cb: goToOtp,
-          ),
+          PrimaryButton(text: AppLocalizations.of(context)!.continueTextButton, cb: goToOtp),
         ],
       ),
     );

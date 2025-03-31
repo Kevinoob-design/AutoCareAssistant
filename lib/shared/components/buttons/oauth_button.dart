@@ -1,15 +1,9 @@
-import 'package:auto_care_assistant/shared/config/constants.dart'
-    show kBorderSideColor;
+import 'package:auto_care_assistant/shared/config/constants.dart' show kBorderSideColor;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 
 class OauthSignupButton extends StatelessWidget {
-  const OauthSignupButton({
-    super.key,
-    required this.icon,
-    required this.press,
-    required this.text,
-  });
+  const OauthSignupButton({super.key, required this.icon, required this.press, required this.text});
 
   final String icon;
   final String text;
@@ -28,11 +22,7 @@ class OauthSignupButton extends StatelessWidget {
           side: BorderSide(color: kBorderSideColor, width: 1),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 6,
-        children: [SvgPicture.asset(icon), Text(text)],
-      ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, spacing: 6, children: [SvgPicture.asset(icon), Text(text)]),
     );
   }
 }

@@ -1,18 +1,12 @@
-import 'package:auto_care_assistant/shared/components/buttons/oauth_button.dart'
-    show OauthSignupButton;
-import 'package:auto_care_assistant/shared/components/headings/subtitle.dart'
-    show Subtitle;
-import 'package:auto_care_assistant/shared/config/constants.dart'
-    show kBorderSideColor;
-import 'package:auto_care_assistant/screens/signup/components/form.dart'
-    show SignUpForm;
-import 'package:firebase_auth/firebase_auth.dart'
-    show FirebaseAuth, GoogleAuthProvider;
+import 'package:auto_care_assistant/shared/components/buttons/oauth_button.dart' show OauthSignupButton;
+import 'package:auto_care_assistant/shared/components/headings/subtitle.dart' show Subtitle;
+import 'package:auto_care_assistant/shared/config/constants.dart' show kBorderSideColor;
+import 'package:auto_care_assistant/screens/signup/components/signup_form.dart' show SignUpForm;
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, GoogleAuthProvider;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:auto_care_assistant/screens/signup/signup_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart'
-    show GoogleSignIn, GoogleSignInAccount, GoogleSignInAuthentication;
+import 'package:google_sign_in/google_sign_in.dart' show GoogleSignIn, GoogleSignInAccount, GoogleSignInAuthentication;
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key, required this.controller});
@@ -29,13 +23,9 @@ class SignUpScreen extends StatelessWidget {
     void signInWithGoogle() async {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
+      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
 
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      );
+      final credential = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
 
       await FirebaseAuth.instance.signInWithCredential(credential);
 
@@ -43,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Sign Up")),
+      appBar: AppBar(title: const Text('Sign Up')),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -68,10 +58,7 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.10),
                   OauthSignupButton(
                     icon: 'assets/icons/google-icon.svg',
-                    text:
-                        AppLocalizations.of(
-                          context,
-                        )!.continueWithGoogleTextButton,
+                    text: AppLocalizations.of(context)!.continueWithGoogleTextButton,
                     press: signInWithGoogle,
                   ),
                   const SizedBox(height: 16),

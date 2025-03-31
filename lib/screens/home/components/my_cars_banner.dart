@@ -30,14 +30,8 @@ class MyCarsBanner extends StatelessWidget {
                 backgroundColor: Colors.white,
                 child: Icon(Icons.car_repair, color: Color(0xFF4A3298)),
               ),
-              title: Text(
-                "My Cars",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              subtitle: Text(
-                "View all my cars",
-                style: TextStyle(color: Colors.white),
-              ),
+              title: Text('My Cars', style: TextStyle(color: Colors.white, fontSize: 20)),
+              subtitle: Text('View all my cars', style: TextStyle(color: Colors.white)),
             ),
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/config/constants.dart';
+import 'package:auto_care_assistant/shared/config/constants.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({super.key});
@@ -13,14 +13,11 @@ class SearchField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: kSecondaryColor.withValues(alpha: 0.1),
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           border: searchOutlineInputBorder,
           focusedBorder: searchOutlineInputBorder,
           enabledBorder: searchOutlineInputBorder,
-          hintText: "Search product",
+          hintText: 'Search product',
           prefixIcon: const Icon(Icons.search),
         ),
       ),
