@@ -1,4 +1,6 @@
+import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show CarService;
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_bottom_sheet.dart' show NewCarBottomSheet;
+import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
 
 class BottomNavBarAddCar extends StatelessWidget {
@@ -17,14 +19,17 @@ class BottomNavBarAddCar extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton(
-                onPressed:
-                    () => showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true,
-                      useSafeArea: true,
-                      showDragHandle: true,
-                      builder: (context) => NewCarBottomSheet(),
-                    ),
+                onPressed: () async {
+                  Car? car = await showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    useSafeArea: true,
+                    showDragHandle: true,
+                    builder: (context) => NewCarBottomSheet(),
+                  );
+
+                  if (car is Car) CarService.saveCar(car);
+                },
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   foregroundColor: Colors.white,

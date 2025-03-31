@@ -1,6 +1,6 @@
 import 'package:auto_care_assistant/screens/car_catalog/components/car_type_selection.dart' show CarTypeSelection;
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
-import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
+import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car, DistanceMeasurement;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
 import 'package:flutter/material.dart';
 
@@ -40,7 +40,6 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTicker
     formKey.currentState!.save();
 
     Car car = Car(
-      id: 0,
       title: formData['title'],
       plaque: formData['plaque'],
       carType: selectedCarType!,

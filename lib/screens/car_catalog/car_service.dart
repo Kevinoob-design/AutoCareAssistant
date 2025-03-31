@@ -1,23 +1,9 @@
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car, DistanceMeasurement;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class CarService {
-  static List<Car> demoCars = [
-    Car(
-      id: 1,
-      carType: CarType(type: 'Sedan', icon: 'assets/icons/Sedan.svg'),
-      title: 'Primary Car',
-      plaque: 'ABC123',
-      chassisNumber: '123456789',
-      distanceTraveled: 12.5,
-      make: 'Honda',
-      model: 'Civic',
-      year: 2020,
-      distanceMeasurement: DistanceMeasurement.km,
-      lastServiceDate: DateTime.now(),
-    ),
-  ];
-
   static final List<CarType> carTypes = [
     CarType(type: 'Sedan', icon: 'assets/icons/Sedan.svg'),
     CarType(type: 'City Car', icon: 'assets/icons/Mini.svg'),
@@ -33,15 +19,46 @@ class CarService {
     // CarType(type: 'Taxi', icon: 'assets/icons/Taxi.svg'),
   ];
 
-  static List<Car> getCars() {
-    return demoCars;
+  static void saveCar(Car car) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseFirestore db = FirebaseFirestore.instance;
+
+    await db.collection('cars').add({
+      'uid': auth.currentUser!.uid,
+      'title': car.title,
+      'plaque': car.plaque,
+      'carType': {'type': car.carType.type, 'icon': car.carType.icon},
+      'make': car.make,
+      'model': car.model,
+      'year': car.year,
+      'chassisNumber': car.chassisNumber,
+      'distanceTraveled': car.distanceTraveled,
+      'distanceMeasurement': car.distanceMeasurement.toString(),
+      'lastServiceDate': car.lastServiceDate,
+    });
   }
 
   static List<CarType> getCarTypes() {
     return carTypes;
   }
 
-  static void removeAt(index) {
-    demoCars.removeAt(index);
+  static Future deleteById(String id) {
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    return db.collection('cars').doc(id).delete();
+  }
+
+  static Car deserializeCar(Map<String, dynamic> data) {
+    return Car(
+      title: data['title'],
+      plaque: data['plaque'],
+      carType: CarType(type: data['carType']['type'], icon: data['carType']['icon']),
+      make: data['make'],
+      model: data['model'],
+      year: data['year'],
+      chassisNumber: data['chassisNumber'],
+      distanceTraveled: data['distanceTraveled'],
+      distanceMeasurement: DistanceMeasurement.values.byName(data['distanceMeasurement'].split('.').last as String),
+      lastServiceDate: data['lastServiceDate'].toDate(),
+    );
   }
 }

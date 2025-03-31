@@ -21,8 +21,8 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
   final List<DropdownMenuItem<T>> items;
   final String hintText;
   final String labelText;
-  final FormFieldSetter onSaved;
-  final FormFieldSetter onChanged;
+  final FormFieldSetter<T> onSaved;
+  final FormFieldSetter<T> onChanged;
   final String suffixIcon;
   final TextInputType inputType;
   final List<TextInputFormatter> inputFormatter;
