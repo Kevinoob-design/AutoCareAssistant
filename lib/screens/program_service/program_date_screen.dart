@@ -12,42 +12,10 @@ class ProgramDate extends StatefulWidget {
 }
 
 class _ProgramDateState extends State<ProgramDate> {
-  int _selectedDay = 2;
-  String _selectedHour = '13:30';
+  int? _selectedDay;
+  String? _selectedHour;
 
-  final List<List> _days = [
-    [1, 'Fri'],
-    [2, 'Sat'],
-    [3, 'Sun'],
-    [4, 'Mon'],
-    [5, 'Tue'],
-    [6, 'Wed'],
-    [7, 'Thu'],
-    [8, 'Fri'],
-    [9, 'Sat'],
-    [10, 'Sun'],
-    [11, 'Mon'],
-    [12, 'Tue'],
-    [13, 'Wed'],
-    [14, 'Thu'],
-    [15, 'Fri'],
-    [16, 'Sat'],
-    [17, 'Sun'],
-    [18, 'Mon'],
-    [19, 'Tue'],
-    [20, 'Wed'],
-    [21, 'Thu'],
-    [22, 'Fri'],
-    [23, 'Sat'],
-    [24, 'Sun'],
-    [25, 'Mon'],
-    [26, 'Tue'],
-    [27, 'Wed'],
-    [28, 'Thu'],
-    [29, 'Fri'],
-    [30, 'Sat'],
-    [31, 'Sun'],
-  ];
+  final List<List> _days = [];
 
   final List<String> _hours = <String>[
     // '00:00 AM',
@@ -102,17 +70,28 @@ class _ProgramDateState extends State<ProgramDate> {
   @override
   void initState() {
     super.initState();
+
+    for (
+      DateTime indexDay = DateTime(DateTime.now().year, DateTime.now().month, 1);
+      indexDay.month == DateTime.now().month;
+      indexDay = indexDay.add(Duration(days: 1))
+    ) {
+      _days.add([indexDay.day, DateFormat.E().format(indexDay).toString()]);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(leading: BackButton(), backgroundColor: Colors.transparent, surfaceTintColor: Colors.transparent),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false),
-        backgroundColor: kPrimaryColor,
-        child: Icon(Icons.arrow_forward_ios),
-      ),
+      floatingActionButton:
+          (_selectedDay != null && _selectedHour != null)
+              ? FloatingActionButton(
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false),
+                backgroundColor: kPrimaryColor,
+                child: Icon(Icons.arrow_forward_ios),
+              )
+              : null,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
