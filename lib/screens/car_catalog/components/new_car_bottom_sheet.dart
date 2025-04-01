@@ -11,7 +11,7 @@ class NewCarBottomSheet extends StatefulWidget {
   State<NewCarBottomSheet> createState() => _NewCarBottomSheetState();
 }
 
-class _NewCarBottomSheetState extends State<NewCarBottomSheet> with SingleTickerProviderStateMixin {
+class _NewCarBottomSheetState extends State<NewCarBottomSheet> {
   CarType? selectedCarType;
   int currentPage = 0;
   PageController pageController = PageController(initialPage: 0);

@@ -89,6 +89,7 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
                   child: Row(children: [const Spacer(), SvgPicture.asset('assets/icons/Trash-icon.svg')]),
                 ),
                 child: CarCard(
+                  id: snapshot.data?.docs[index].id as String,
                   car: CarService.deserializeCar(snapshot.data?.docs[index].data() as Map<String, dynamic>),
                 ),
               ),

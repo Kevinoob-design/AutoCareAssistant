@@ -1,11 +1,13 @@
+import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show CarService;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 
 class CarCard extends StatelessWidget {
-  const CarCard({super.key, required this.car});
+  const CarCard({super.key, required this.car, required this.id});
 
+  final String id;
   final Car car;
 
   @override
@@ -36,7 +38,14 @@ class CarCard extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        IconButton(icon: Icon(Icons.edit), onPressed: () => Navigator.pushNamed(context, '/car-edit', arguments: car)),
+        IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: () async {
+            Car? updatedCar = await Navigator.pushNamed(context, '/car-edit', arguments: car) as Car?;
+
+            if (updatedCar is Car) CarService.updateCarById(id, updatedCar);
+          },
+        ),
       ],
     );
   }

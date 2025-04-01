@@ -50,6 +50,25 @@ class CarService {
     });
   }
 
+  static void updateCarById(String id, Car car) async {
+    FirebaseFirestore db = FirebaseFirestore.instance;
+
+    print(car.title);
+
+    await db.collection('cars').doc(id).update({
+      'title': car.title,
+      'plaque': car.plaque,
+      'carType': {'type': car.carType.type, 'icon': car.carType.icon},
+      'make': car.make,
+      'model': car.model,
+      'year': car.year,
+      'chassisNumber': car.chassisNumber,
+      'distanceTraveled': car.distanceTraveled,
+      'distanceMeasurement': car.distanceMeasurement.toString(),
+      'lastServiceDate': car.lastServiceDate,
+    });
+  }
+
   static List<CarType> getCarTypes() {
     return carTypes;
   }

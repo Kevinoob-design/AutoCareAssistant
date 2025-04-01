@@ -23,6 +23,10 @@ class _MyCarsBannerState extends State<MyCarsBanner> {
     CarService.getCarsCount().then((value) => setState(() => carsCount = value));
   }
 
+  void refreshCount(dynamic val) {
+    CarService.getCarsCount().then((value) => setState(() => carsCount = value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -52,7 +56,7 @@ class _MyCarsBannerState extends State<MyCarsBanner> {
               },
             ),
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/my-cars'),
+              onPressed: () => Navigator.pushNamed(context, '/my-cars').then(refreshCount),
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 foregroundColor: Colors.white,
