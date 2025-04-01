@@ -1,5 +1,6 @@
 import 'package:auto_care_assistant/shared/components/salomon_bottom_bar.dart'
     show SalomonBottomBar, SalomonBottomBarItem;
+import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_care_assistant/screens/home/home_screen.dart';
@@ -31,6 +32,11 @@ class _InitScreenState extends State<InitScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentSelectedIndex],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, '/program-service'),
+        backgroundColor: kPrimaryColor,
+        child: const Icon(CupertinoIcons.add),
+      ),
       bottomNavigationBar: SalomonBottomBar(
         onTap: updateCurrentIndex,
         currentIndex: currentSelectedIndex,

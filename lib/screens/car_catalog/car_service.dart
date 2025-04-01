@@ -53,8 +53,6 @@ class CarService {
   static void updateCarById(String id, Car car) async {
     FirebaseFirestore db = FirebaseFirestore.instance;
 
-    print(car.title);
-
     await db.collection('cars').doc(id).update({
       'title': car.title,
       'plaque': car.plaque,
