@@ -28,7 +28,7 @@
   "@signUpDisclaimer": {
     "description": "Sign Up disclaimer"
   },
-  "formPhoneHint": "Enter your phone number",
+  "formPhoneHint": "Your phone number",
   "@formPhoneHint": {
     "description": "Form phone hint"
   },
@@ -36,7 +36,7 @@
   "@formPhoneLabel": {
     "description": "Form phone label"
   },
-  "formEmailHint": "Enter your email",
+  "formEmailHint": "Your email",
   "@formEmailHint": {
     "description": "Form email hint"
   },
@@ -44,7 +44,7 @@
   "@formEmailLabel": {
     "description": "Form email label"
   },
-  "formPasswordHint": "Enter your password",
+  "formPasswordHint": "Your password",
   "@formPasswordHint": {
     "description": "Form password hint"
   },
@@ -52,11 +52,11 @@
   "@formPasswordLabel": {
     "description": "Form password label"
   },
-  "formReEnterHint": "Enter your password",
+  "formReEnterHint": "Your password",
   "@formReEnterHint": {
     "description": "Form re enter password hint"
   },
-  "formReEnterLabel": "Re-enter your password",
+  "formReEnterLabel": "Re-Your password",
   "@formReEnterLabel": {
     "description": "Form re enter password label"
   },
@@ -87,5 +87,93 @@
   "otpResentMessage": "Resend OTP Code",
   "@otpResentMessage": {
     "description": "OTP Resend message"
+  },
+  "carTitleLabel": "Title",
+  "@carTitleLabel": {
+    "description": "Car title label"
+  },
+  "carTitleHint": "Describe your car",
+  "@carTitleHint": {
+    "description": "Car title hint"
+  },
+  "carTypeLabel": "Car Type",
+  "@carTypeLabel": {
+    "description": "Car type label"
+  },
+  "carTypeHint": "Select your car type",
+  "@carTypeHint": {
+    "description": "Car type hint"
+  },
+  "carPlaqueLabel": "Plaque",
+  "@carPlaqueLabel": {
+    "description": "Car plaque label"
+  },
+  "carPlaqueHint": "",
+  "@carPlaqueHint": {
+    "description": "Car plaque hint"
+  },
+  "carChassisNumberLabel": "Chassis Number",
+  "@carChassisNumberLabel": {
+    "description": "Car chassis number label"
+  },
+  "carChassisNumberHint": "",
+  "@carChassisNumberHint": {
+    "description": "Car chassis number hint"
+  },
+  "carDistanceTraveledLabel": "Distance Traveled",
+  "@carDistanceTraveledLabel": {
+    "description": "Car distance traveled label"
+  },
+  "carDistanceTraveledHint": "",
+  "@carDistanceTraveledHint": {
+    "description": "Car distance traveled hint"
+  },
+  "carMakeLabel": "Make",
+  "@carMakeLabel": {
+    "description": "Car make label"
+  },
+  "carMakeHint": "",
+  "@carMakeHint": {
+    "description": "Car make hint"
+  },
+  "carModelLabel": "Model",
+  "@carModelLabel": {
+    "description": "Car model label"
+  },
+  "carModelHint": "",
+  "@carModelHint": {
+    "description": "Car model hint"
+  },
+  "carYearLabel": "Year",
+  "@carYearLabel": {
+    "description": "Car year label"
+  },
+  "carYearHint": "",
+  "@carYearHint": {
+    "description": "Car year hint"
+  },
+  "carDistanceMeasurementLabel": "Distance Measurement",
+  "@carDistanceMeasurementLabel": {
+    "description": "Car distance measurement label"
+  },
+  "carDistanceMeasurementHint": "",
+  "@carDistanceMeasurementHint": {
+    "description": "Car distance measurement hint"
+  },
+  "carLastServiceDateLabel": "Last Service Date",
+  "@carLastServiceDateLabel": {
+    "description": "Car last service date label"
+  },
+  "carLastServiceDateHint": "",
+  "@carLastServiceDateHint": {
+    "description": "Car last service date hint"
+  },
+  "carDistanceMeasurementKm": "Kilometers",
+  "@carDistanceMeasurementKm": {
+    "description": ""
+  },
+  "carDistanceMeasurementMi": "Miles",
+  "@carDistanceMeasurementMi": {
+    "description": ""
   }
 }

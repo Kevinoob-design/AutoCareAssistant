@@ -8,11 +8,7 @@ class Heading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        fontSize: 32,
-        color: Theme.of(context).primaryColor,
-        fontWeight: FontWeight.bold,
-      ),
+      style: TextStyle(fontSize: 32, color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold),
     );
   }
 }
