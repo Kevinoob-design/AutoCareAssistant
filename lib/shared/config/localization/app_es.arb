@@ -1,0 +1,91 @@
+{
+    "@@locale": "es",
+    "appTitle": "Asistente AutoCare",
+    "@appTitle": {
+      "description": "El título de la aplicación"
+    },
+    "splashScreenFirstMessage": "Bienvenido a Asistente AutoCare. \n¡Comencemos!",
+    "@splashScreenFirstMessage": {
+      "description": "Primer mensaje de la pantalla de bienvenida"
+    },
+    "splashScreenSecondMessage": "Ayudamos a las personas a encontrar talleres \ncerca de su ubicación",
+    "@splashScreenSecondMessage": {
+      "description": "Segundo mensaje de la pantalla de bienvenida"
+    },
+    "splashScreenThirdMessage": "Te mostramos la forma fácil de mantener \nel mantenimiento de tu coche al día.",
+    "@splashScreenThirdMessage": {
+      "description": "Tercer mensaje de la pantalla de bienvenida"
+    },
+    "signUpSubtitle": "Registrar Cuenta",
+    "@signUpSubtitle": {
+      "description": "Subtítulo de Registro"
+    },
+    "signUpInstructions": "Completa tus datos o continúa \ncon redes sociales",
+    "@signUpInstructions": {
+      "description": "Instrucciones de Registro"
+    },
+    "signUpDisclaimer": "Al continuar, confirmas que estás de acuerdo \ncon nuestros Términos y Condiciones",
+    "@signUpDisclaimer": {
+      "description": "Descargo de responsabilidad de Registro"
+    },
+    "formPhoneHint": "Introduce tu número de teléfono",
+    "@formPhoneHint": {
+      "description": "Texto de sugerencia para el campo de teléfono"
+    },
+    "formPhoneLabel": "Teléfono",
+    "@formPhoneLabel": {
+      "description": "Etiqueta para el campo de teléfono"
+    },
+    "formEmailHint": "Introduce tu correo electrónico",
+    "@formEmailHint": {
+      "description": "Texto de sugerencia para el campo de correo electrónico"
+    },
+    "formEmailLabel": "Correo Electrónico",
+    "@formEmailLabel": {
+      "description": "Etiqueta para el campo de correo electrónico"
+    },
+    "formPasswordHint": "Introduce tu contraseña",
+    "@formPasswordHint": {
+      "description": "Texto de sugerencia para el campo de contraseña"
+    },
+    "formPasswordLabel": "Contraseña",
+    "@formPasswordLabel": {
+      "description": "Etiqueta para el campo de contraseña"
+    },
+    "formReEnterHint": "Vuelve a introducir tu contraseña",
+    "@formReEnterHint": {
+      "description": "Texto de sugerencia para el campo de reintroducir contraseña"
+    },
+    "formReEnterLabel": "Vuelve a introducir tu contraseña",
+    "@formReEnterLabel": {
+      "description": "Etiqueta para el campo de reintroducir contraseña"
+    },
+    "continueTextButton": "Continuar",
+    "@continueTextButton": {
+      "description": "Texto del botón Continuar"
+    },
+    "continueWithGoogleTextButton": "Continuar con Google",
+    "@continueWithGoogleTextButton": {
+      "description": "Texto del botón Continuar con Google"
+    },
+    "signUpOrTextOption": "O",
+    "@signUpOrTextOption": {
+      "description": "Texto opcional O"
+    },
+    "otpSentTitle": "Verificación OTP",
+    "@otpSentTitle": {
+      "description": "Título de la pantalla OTP"
+    },
+    "otpSentMessage": "Enviamos tu código a",
+    "@otpSentMessage": {
+      "description": "Mensaje de envío de OTP"
+    },
+    "otpExpirationMessage": "Este código expirará en",
+    "@otpExpirationMessage": {
+      "description": "Mensaje de expiración de OTP"
+    },
+    "otpResentMessage": "Reenviar Código OTP",
+    "@otpResentMessage": {
+      "description": "Mensaje de reenvío de OTP"
+    }
+  }
