@@ -1,4 +1,5 @@
 import 'package:auto_care_assistant/shared/config/constants.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -90,6 +91,7 @@ class _ProgramServiceState extends State<ProgramService> {
   serviceContainer(String image, String name, int index) {
     return GestureDetector(
       onTap: () {
+        HapticFeedback.lightImpact();
         setState(() {
           if (selectedService == index) {
             selectedService = -1;

@@ -9,6 +9,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: TextFormField(
+        onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
         onChanged: (value) {},
         decoration: InputDecoration(
           filled: true,

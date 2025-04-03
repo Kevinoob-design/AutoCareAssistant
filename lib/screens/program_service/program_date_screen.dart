@@ -1,5 +1,6 @@
 import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
@@ -132,6 +133,7 @@ class _ProgramDateState extends State<ProgramDate> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
+                          HapticFeedback.lightImpact();
                           setState(() {
                             _selectedDay = _days[index][0];
                           });
@@ -178,6 +180,7 @@ class _ProgramDateState extends State<ProgramDate> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
+                          HapticFeedback.lightImpact();
                           setState(() {
                             _selectedHour = _hours[index];
                           });

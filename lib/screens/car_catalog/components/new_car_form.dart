@@ -37,15 +37,17 @@ class _NewCarFormState extends State<NewCarForm> {
     }
   }
 
-  String? formInputTextValidator(String? val) => val!.isEmpty ? 'Field is required' : null;
-  String? formInputTextYearValidator(String? val) {
-    if (val!.isEmpty) return 'Field is required';
-    if (val.length != 4) return 'Year must be 4 digits';
-    if (int.parse(val) > DateTime.now().year) return 'Cannot be in the future';
+  String? formInputTextValidator(String? val, BuildContext context) =>
+      val!.isEmpty ? AppLocalizations.of(context)!.carsFormFieldRequiredMessage : null;
+  String? formInputTextYearValidator(String? val, BuildContext context) {
+    if (val!.isEmpty) return AppLocalizations.of(context)!.carsFormFieldRequiredMessage;
+    if (val.length != 4) return AppLocalizations.of(context)!.carsFormYearMustBeMessage;
+    if (int.parse(val) > DateTime.now().year) return AppLocalizations.of(context)!.carsFormDateCannotBeMessage;
     return null;
   }
 
-  String? formDropDownValidator(DistanceMeasurement? val) => val == null ? 'Field is required' : null;
+  String? formDropDownValidator(DistanceMeasurement? val, BuildContext context) =>
+      val == null ? AppLocalizations.of(context)!.carsFormFieldRequiredMessage : null;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class _NewCarFormState extends State<NewCarForm> {
                 children: [
                   InputTextFormField(
                     initialValue: widget.formData['title'],
-                    validator: formInputTextValidator,
+                    validator: (String? val) => formInputTextValidator(val, context),
                     labelText: AppLocalizations.of(context)!.carTitleLabel,
                     hintText: AppLocalizations.of(context)!.carTitleHint,
                     onChanged: (val) => widget.formData['title'] = val,
@@ -83,7 +85,7 @@ class _NewCarFormState extends State<NewCarForm> {
                       Expanded(
                         child: InputTextFormField(
                           initialValue: widget.formData['make'],
-                          validator: formInputTextValidator,
+                          validator: (String? val) => formInputTextValidator(val, context),
                           labelText: AppLocalizations.of(context)!.carMakeLabel,
                           hintText: AppLocalizations.of(context)!.carMakeHint,
                           onChanged: (val) => widget.formData['make'] = val,
@@ -93,7 +95,7 @@ class _NewCarFormState extends State<NewCarForm> {
                       Expanded(
                         child: InputTextFormField(
                           initialValue: widget.formData['model'],
-                          validator: formInputTextValidator,
+                          validator: (String? val) => formInputTextValidator(val, context),
                           labelText: AppLocalizations.of(context)!.carModelLabel,
                           hintText: AppLocalizations.of(context)!.carModelHint,
                           onChanged: (val) => widget.formData['model'] = val,
@@ -109,7 +111,7 @@ class _NewCarFormState extends State<NewCarForm> {
                       Expanded(
                         child: InputTextFormField(
                           initialValue: widget.formData['distanceTraveled'],
-                          validator: formInputTextValidator,
+                          validator: (String? val) => formInputTextValidator(val, context),
                           inputType: TextInputType.number,
                           inputFormatter: [FilteringTextInputFormatter.digitsOnly],
                           labelText: AppLocalizations.of(context)!.carDistanceTraveledLabel,
@@ -121,7 +123,7 @@ class _NewCarFormState extends State<NewCarForm> {
                       Expanded(
                         child: InputDropDownBottomFormField<DistanceMeasurement>(
                           initialValue: widget.formData['distanceMeasurement'],
-                          validator: formDropDownValidator,
+                          validator: (DistanceMeasurement? val) => formDropDownValidator(val, context),
                           onChanged: (val) => widget.formData['distanceMeasurement'] = val,
                           onSaved: (val) => widget.formData['distanceMeasurement'] = val,
                           labelText: AppLocalizations.of(context)!.carDistanceMeasurementLabel,
@@ -147,7 +149,7 @@ class _NewCarFormState extends State<NewCarForm> {
                       Expanded(
                         child: InputTextFormField(
                           initialValue: widget.formData['year'],
-                          validator: formInputTextYearValidator,
+                          validator: (String? val) => formInputTextYearValidator(val, context),
                           inputType: TextInputType.number,
                           inputFormatter: [FilteringTextInputFormatter.digitsOnly],
                           labelText: AppLocalizations.of(context)!.carYearLabel,
@@ -161,7 +163,7 @@ class _NewCarFormState extends State<NewCarForm> {
                           onTap: () => selectDate(context),
                           child: AbsorbPointer(
                             child: InputTextFormField(
-                              validator: formInputTextValidator,
+                              validator: (String? val) => formInputTextValidator(val, context),
                               controller: dateTextEditingController,
                               labelText: AppLocalizations.of(context)!.carLastServiceDateLabel,
                               inputType: TextInputType.datetime,
@@ -177,7 +179,7 @@ class _NewCarFormState extends State<NewCarForm> {
                   SizedBox(height: 16),
                   InputTextFormField(
                     initialValue: widget.formData['plaque'],
-                    validator: formInputTextValidator,
+                    validator: (String? val) => formInputTextValidator(val, context),
                     labelText: AppLocalizations.of(context)!.carPlaqueLabel,
                     hintText: AppLocalizations.of(context)!.carPlaqueHint,
                     onChanged: (val) => widget.formData['plaque'] = val,
@@ -186,7 +188,7 @@ class _NewCarFormState extends State<NewCarForm> {
                   SizedBox(height: 16),
                   InputTextFormField(
                     initialValue: widget.formData['chassisNumber'],
-                    validator: formInputTextValidator,
+                    validator: (String? val) => formInputTextValidator(val, context),
                     labelText: AppLocalizations.of(context)!.carChassisNumberLabel,
                     hintText: AppLocalizations.of(context)!.carChassisNumberHint,
                     onChanged: (val) => widget.formData['chassisNumber'] = val,

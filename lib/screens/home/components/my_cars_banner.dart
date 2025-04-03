@@ -3,6 +3,7 @@ import 'package:auto_care_assistant/screens/car_catalog/components/header_car_ca
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart' show Intl;
 
@@ -57,7 +58,8 @@ class _MyCarsBannerState extends State<MyCarsBanner> {
               },
             ),
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/my-cars').then(refreshCount),
+              onPressed:
+                  () => {HapticFeedback.lightImpact(), Navigator.pushNamed(context, '/my-cars').then(refreshCount)},
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 foregroundColor: Colors.white,

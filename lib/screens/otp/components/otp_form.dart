@@ -1,6 +1,7 @@
 import 'package:auto_care_assistant/screens/otp/components/otp_number_box.dart' show OtpNumberBox;
 import 'package:auto_care_assistant/screens/otp/services/otp_service.dart' show OtpService;
 import 'package:auto_care_assistant/shared/config/constants.dart' show kBorderSideColor, primaryColor;
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +59,10 @@ class OtpForm extends StatelessWidget {
           const SizedBox(height: 24),
           ElevatedButton(
             onPressed:
-                () => OtpService.signInWithSmsCode(codeSentVerificationId, verificationCode.join(), cbOnContinuePress),
+                () => {
+                  HapticFeedback.lightImpact(),
+                  OtpService.signInWithSmsCode(codeSentVerificationId, verificationCode.join(), cbOnContinuePress),
+                },
             style: ElevatedButton.styleFrom(
               elevation: 0,
               backgroundColor: primaryColor,

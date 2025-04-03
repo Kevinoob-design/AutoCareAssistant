@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SalomonBottomBar extends StatelessWidget {
   /// A bottom bar that faithfully follows the design by Aurélien Salomon
@@ -88,7 +89,7 @@ class SalomonBottomBar extends StatelessWidget {
                     shape: itemShape,
                     child: InkWell(
                       splashFactory: NoSplash.splashFactory,
-                      onTap: () => onTap?.call(items.indexOf(item)),
+                      onTap: () => {HapticFeedback.lightImpact(), onTap?.call(items.indexOf(item))},
                       customBorder: itemShape,
                       focusColor: selectedColor.withValues(alpha: 0.1),
                       highlightColor: selectedColor.withValues(alpha: 0.1),

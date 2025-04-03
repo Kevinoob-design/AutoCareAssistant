@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/components/car_type_sele
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +76,7 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> {
             ),
             if (selectedCarType != null)
               ElevatedButton(
-                onPressed: onFormSaved,
+                onPressed: () => {HapticFeedback.lightImpact(), onFormSaved()},
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   foregroundColor: Colors.white,

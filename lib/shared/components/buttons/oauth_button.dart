@@ -1,5 +1,6 @@
 import 'package:auto_care_assistant/shared/config/constants.dart' show kBorderSideColor;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 
 class OauthSignupButton extends StatelessWidget {
@@ -12,7 +13,7 @@ class OauthSignupButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: press,
+      onPressed: () => {HapticFeedback.lightImpact(), press()},
       style: ElevatedButton.styleFrom(
         elevation: 0,
         backgroundColor: Colors.transparent,

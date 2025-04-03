@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show C
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 
 class CarCard extends StatelessWidget {
@@ -41,6 +42,7 @@ class CarCard extends StatelessWidget {
         IconButton(
           icon: Icon(Icons.edit),
           onPressed: () async {
+            HapticFeedback.lightImpact();
             Car? updatedCar = await Navigator.pushNamed(context, '/car-edit', arguments: car) as Car?;
 
             if (updatedCar is Car) CarService.updateCarById(id, updatedCar);

@@ -4,6 +4,7 @@ import 'package:auto_care_assistant/screens/car_catalog/components/car_card.dart
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore, QuerySnapshot;
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -72,7 +73,7 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
                         content: Text(AppLocalizations.of(context)!.confirmMessage),
                         actions: <Widget>[
                           ElevatedButton(
-                            onPressed: () => Navigator.of(context).pop(true),
+                            onPressed: () => {HapticFeedback.lightImpact(), Navigator.of(context).pop(true)},
                             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                             child: Text(AppLocalizations.of(context)!.deleteButton),
                           ),

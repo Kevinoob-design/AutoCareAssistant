@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:auto_care_assistant/shared/config/constants.dart';
+import 'package:flutter/services.dart';
 
 class ProfileMenu extends StatelessWidget {
-  const ProfileMenu({super.key, required this.text, required this.icon, this.press});
+  const ProfileMenu({super.key, required this.text, this.leadingIcon, this.press, this.trailingIcon});
 
   final String text;
-  final IconData icon;
+  final IconData? leadingIcon;
+  final IconData? trailingIcon;
   final VoidCallback? press;
 
   @override
@@ -18,13 +20,16 @@ class ProfileMenu extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         ),
-        onPressed: press,
+        onPressed: () {
+          HapticFeedback.lightImpact();
+          press?.call();
+        },
         child: Row(
           children: [
-            Icon(icon, color: kPrimaryColor, size: 22),
+            Icon(leadingIcon, color: kPrimaryColor, size: 22),
             const SizedBox(width: 20),
             Expanded(child: Text(text)),
-            const Icon(Icons.arrow_forward_ios),
+            Icon(trailingIcon, color: kPrimaryColor, size: 22),
           ],
         ),
       ),

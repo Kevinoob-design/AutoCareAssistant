@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({super.key, required this.text, required this.cb});
@@ -9,7 +10,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: cb,
+      onPressed: () => {HapticFeedback.lightImpact(), cb},
       style: ElevatedButton.styleFrom(
         elevation: 0,
         backgroundColor: const Color(0xFFFF7643),

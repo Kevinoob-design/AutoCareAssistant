@@ -323,5 +323,25 @@
   "localeSelectionTitle": "Change your proffered language",
   "@localeSelectionTitle": {
     "description": ""
+  },
+  "notificationBannerActionLabel": "DISMISS",
+  "@notificationBannerActionLabel": {
+    "description": ""
+  },
+  "notificationBannerRestoreDefaultsMessage": "Defaults restored",
+  "@notificationBannerRestoreDefaultsMessage": {
+    "description": ""
+  },
+  "carsFormFieldRequiredMessage": "Field is required",
+  "@carsFormFieldRequiredMessage": {
+    "description": ""
+  },
+  "carsFormYearMustBeMessage": "Year must be 4 digits",
+  "@carsFormYearMustBeMessage": {
+    "description": ""
+  },
+  "carsFormDateCannotBeMessage": "Cannot be in the future",
+  "@carsFormDateCannotBeMessage": {
+    "description": ""
   }
 }

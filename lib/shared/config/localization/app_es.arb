@@ -323,5 +323,25 @@
   "localeSelectionTitle": "Cambia tu preferencia de idioma",
   "@localeSelectionTitle": {
     "description": ""
+  },
+  "notificationBannerActionLabel": "DESCARTAR",
+  "@notificationBannerActionLabel": {
+    "description": ""
+  },
+  "notificationBannerRestoreDefaultsMessage": "Valores predeterminados restaurados",
+  "@notificationBannerRestoreDefaultsMessage": {
+    "description": ""
+  },
+  "carsFormFieldRequiredMessage": "El campo es obligatorio",
+  "@carsFormFieldRequiredMessage": {
+    "description": ""
+  },
+  "carsFormYearMustBeMessage": "El año debe tener 4 dígitos",
+  "@carsFormYearMustBeMessage": {
+    "description": ""
+  },
+  "carsFormDateCannotBeMessage": "No puede estar en el futuro",
+  "@carsFormDateCannotBeMessage": {
+    "description": ""
   }
 }

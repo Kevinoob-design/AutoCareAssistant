@@ -40,7 +40,7 @@ class SettingsService {
       case 'es':
         return Locale('es', '');
       default:
-        return Locale('en', '');
+        return Locale('es', '');
     }
   }
 

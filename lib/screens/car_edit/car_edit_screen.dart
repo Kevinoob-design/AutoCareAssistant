@@ -1,6 +1,7 @@
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CarEditScreen extends StatelessWidget {
@@ -57,22 +58,24 @@ class CarEditScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              NewCarForm(formKey: formKey, formData: formData, previousPageCb: null),
-              ElevatedButton(
-                onPressed: onFormSaved,
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  foregroundColor: Colors.white,
-                  backgroundColor: Theme.of(context).primaryColor,
-                  minimumSize: const Size(double.infinity, 48),
-                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                NewCarForm(formKey: formKey, formData: formData, previousPageCb: null),
+                ElevatedButton(
+                  onPressed: () => {HapticFeedback.lightImpact(), onFormSaved()},
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    foregroundColor: Colors.white,
+                    backgroundColor: Theme.of(context).primaryColor,
+                    minimumSize: const Size(double.infinity, 48),
+                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+                  ),
+                  child: Text(AppLocalizations.of(context)!.saveButtonText),
                 ),
-                child: Text(AppLocalizations.of(context)!.saveButtonText),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show C
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_bottom_sheet.dart' show NewCarBottomSheet;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BottomNavBarAddCar extends StatelessWidget {
@@ -18,6 +19,7 @@ class BottomNavBarAddCar extends StatelessWidget {
       child: SafeArea(
         child: ElevatedButton(
           onPressed: () async {
+            HapticFeedback.lightImpact();
             Car? car = await showModalBottomSheet(
               context: context,
               isScrollControlled: true,
