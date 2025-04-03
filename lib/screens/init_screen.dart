@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_care_assistant/screens/home/home_screen.dart';
 import 'package:auto_care_assistant/screens/profile/profile_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const Color inActiveIconColor = Color(0xFFB6B6B6);
 
@@ -44,12 +45,12 @@ class _InitScreenState extends State<InitScreen> {
           SalomonBottomBarItem(
             icon: Icon(CupertinoIcons.house),
             activeIcon: Icon(CupertinoIcons.house_fill),
-            title: Text('Home'),
+            title: Text(AppLocalizations.of(context)!.navHomeLabel),
           ),
           SalomonBottomBarItem(
             icon: Icon(CupertinoIcons.person),
             activeIcon: Icon(CupertinoIcons.person_fill),
-            title: Text('Profile'),
+            title: Text(AppLocalizations.of(context)!.navProfileLabel),
           ),
         ],
       ),

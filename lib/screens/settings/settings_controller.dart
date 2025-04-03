@@ -16,10 +16,12 @@ class SettingsController with ChangeNotifier {
   // Make ThemeMode a private variable so it is not updated directly without
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
+  late Locale _locale;
   late bool _skipSplashScreen;
 
   // Allow Widgets to read the user's preferred ThemeMode.
   ThemeMode get themeMode => _themeMode;
+  Locale get locale => _locale;
   bool get skipSplashScreen => _skipSplashScreen;
 
   /// Load the user's settings from the SettingsService. It may load from a
@@ -27,6 +29,7 @@ class SettingsController with ChangeNotifier {
   /// settings from the service.
   Future<void> loadSettings() async {
     _themeMode = await _settingsService.themeMode();
+    _locale = await _settingsService.locale();
     _skipSplashScreen = await _settingsService.skipSplashScreen();
 
     // Important! Inform listeners a change has occurred.
@@ -49,5 +52,22 @@ class SettingsController with ChangeNotifier {
     // Persist the changes to a local database or the internet using the
     // SettingService.
     await _settingsService.updateThemeMode(newThemeMode);
+  }
+
+  Future<void> updateLocale(Locale? locale) async {
+    if (locale == null) return;
+
+    // Do not perform any work if new and old ThemeMode are identical
+    if (locale == _locale) return;
+
+    // Otherwise, store the new ThemeMode in memory
+    _locale = locale;
+
+    // Important! Inform listeners a change has occurred.
+    notifyListeners();
+
+    // Persist the changes to a local database or the internet using the
+    // SettingService.
+    await _settingsService.updateLocale(locale);
   }
 }

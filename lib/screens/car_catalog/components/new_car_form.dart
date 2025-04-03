@@ -59,7 +59,7 @@ class _NewCarFormState extends State<NewCarForm> {
             ? const SizedBox()
             : ListTile(
               leading: GestureDetector(onTap: widget.previousPageCb, child: Icon(Icons.arrow_back_ios)),
-              title: Subtitle(text: 'Fill in vehicle details'),
+              title: Subtitle(text: AppLocalizations.of(context)!.fillDetailsTitle),
             ),
         SingleChildScrollView(
           child: Padding(

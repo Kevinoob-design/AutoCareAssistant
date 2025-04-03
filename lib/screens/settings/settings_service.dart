@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' show Intl;
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A service that stores and retrieves user settings.
@@ -31,9 +32,27 @@ class SettingsService {
     }
   }
 
+  Future<Locale> locale() async {
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    switch (preferences.getString('locale')) {
+      case 'en':
+        return Locale('en', '');
+      case 'es':
+        return Locale('es', '');
+      default:
+        return Locale('en', '');
+    }
+  }
+
   /// Persists the user's preferred ThemeMode to local or remote storage.
   Future<void> updateThemeMode(ThemeMode theme) async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     await preferences.setString('themeMode', theme.toString());
+  }
+
+  Future<void> updateLocale(Locale locale) async {
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setString('locale', locale.toString());
   }
 }

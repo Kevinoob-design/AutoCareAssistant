@@ -1,91 +1,327 @@
 {
-    "@@locale": "es",
-    "appTitle": "Asistente AutoCare",
-    "@appTitle": {
-      "description": "El título de la aplicación"
-    },
-    "splashScreenFirstMessage": "Bienvenido a Asistente AutoCare. \n¡Comencemos!",
-    "@splashScreenFirstMessage": {
-      "description": "Primer mensaje de la pantalla de bienvenida"
-    },
-    "splashScreenSecondMessage": "Ayudamos a las personas a encontrar talleres \ncerca de su ubicación",
-    "@splashScreenSecondMessage": {
-      "description": "Segundo mensaje de la pantalla de bienvenida"
-    },
-    "splashScreenThirdMessage": "Te mostramos la forma fácil de mantener \nel mantenimiento de tu coche al día.",
-    "@splashScreenThirdMessage": {
-      "description": "Tercer mensaje de la pantalla de bienvenida"
-    },
-    "signUpSubtitle": "Registrar Cuenta",
-    "@signUpSubtitle": {
-      "description": "Subtítulo de Registro"
-    },
-    "signUpInstructions": "Completa tus datos o continúa \ncon redes sociales",
-    "@signUpInstructions": {
-      "description": "Instrucciones de Registro"
-    },
-    "signUpDisclaimer": "Al continuar, confirmas que estás de acuerdo \ncon nuestros Términos y Condiciones",
-    "@signUpDisclaimer": {
-      "description": "Descargo de responsabilidad de Registro"
-    },
-    "formPhoneHint": "Introduce tu número de teléfono",
-    "@formPhoneHint": {
-      "description": "Texto de sugerencia para el campo de teléfono"
-    },
-    "formPhoneLabel": "Teléfono",
-    "@formPhoneLabel": {
-      "description": "Etiqueta para el campo de teléfono"
-    },
-    "formEmailHint": "Introduce tu correo electrónico",
-    "@formEmailHint": {
-      "description": "Texto de sugerencia para el campo de correo electrónico"
-    },
-    "formEmailLabel": "Correo Electrónico",
-    "@formEmailLabel": {
-      "description": "Etiqueta para el campo de correo electrónico"
-    },
-    "formPasswordHint": "Introduce tu contraseña",
-    "@formPasswordHint": {
-      "description": "Texto de sugerencia para el campo de contraseña"
-    },
-    "formPasswordLabel": "Contraseña",
-    "@formPasswordLabel": {
-      "description": "Etiqueta para el campo de contraseña"
-    },
-    "formReEnterHint": "Vuelve a introducir tu contraseña",
-    "@formReEnterHint": {
-      "description": "Texto de sugerencia para el campo de reintroducir contraseña"
-    },
-    "formReEnterLabel": "Vuelve a introducir tu contraseña",
-    "@formReEnterLabel": {
-      "description": "Etiqueta para el campo de reintroducir contraseña"
-    },
-    "continueTextButton": "Continuar",
-    "@continueTextButton": {
-      "description": "Texto del botón Continuar"
-    },
-    "continueWithGoogleTextButton": "Continuar con Google",
-    "@continueWithGoogleTextButton": {
-      "description": "Texto del botón Continuar con Google"
-    },
-    "signUpOrTextOption": "O",
-    "@signUpOrTextOption": {
-      "description": "Texto opcional O"
-    },
-    "otpSentTitle": "Verificación OTP",
-    "@otpSentTitle": {
-      "description": "Título de la pantalla OTP"
-    },
-    "otpSentMessage": "Enviamos tu código a",
-    "@otpSentMessage": {
-      "description": "Mensaje de envío de OTP"
-    },
-    "otpExpirationMessage": "Este código expirará en",
-    "@otpExpirationMessage": {
-      "description": "Mensaje de expiración de OTP"
-    },
-    "otpResentMessage": "Reenviar Código OTP",
-    "@otpResentMessage": {
-      "description": "Mensaje de reenvío de OTP"
-    }
+  "@@locale": "es",
+  "appTitle": "AutoCare Assistant",
+  "@appTitle": {
+    "description": "El título de la aplicación"
+  },
+  "splashScreenFirstMessage": "Bienvenido a AutoCare Assistant. \n¡Comencemos!",
+  "@splashScreenFirstMessage": {
+    "description": "Primer mensaje de la pantalla de inicio"
+  },
+  "splashScreenSecondMessage": "Ayudamos a las personas a encontrar \ntalleres de autos cerca de su ubicación",
+  "@splashScreenSecondMessage": {
+    "description": "Segundo mensaje de la pantalla de inicio"
+  },
+  "splashScreenThirdMessage": "Mostramos la manera fácil de mantener \nel mantenimiento de tu auto al día.",
+  "@splashScreenThirdMessage": {
+    "description": "Tercer mensaje de la pantalla de inicio"
+  },
+  "signUpTitle": "Regístrate",
+  "@signUpTitle": {
+    "description": "Sign Up title"
+  },
+  "signUpSubtitle": "Registrar cuenta",
+  "@signUpSubtitle": {
+    "description": "Subtítulo de registro"
+  },
+  "signUpInstructions": "Completa tus datos o continúa \ncon redes sociales",
+  "@signUpInstructions": {
+    "description": "Instrucciones de registro"
+  },
+  "signUpDisclaimer": "Al continuar, confirmas que estás de acuerdo \ncon nuestros Términos y Condiciones",
+  "@signUpDisclaimer": {
+    "description": "Aviso de registro"
+  },
+  "formPhoneHint": "Tu número de teléfono",
+  "@formPhoneHint": {
+    "description": "Sugerencia del campo de teléfono"
+  },
+  "formPhoneLabel": "Teléfono",
+  "@formPhoneLabel": {
+    "description": "Etiqueta del campo de teléfono"
+  },
+  "formEmailHint": "Tu correo electrónico",
+  "@formEmailHint": {
+    "description": "Sugerencia del campo de correo electrónico"
+  },
+  "formEmailLabel": "Correo electrónico",
+  "@formEmailLabel": {
+    "description": "Etiqueta del campo de correo electrónico"
+  },
+  "formPasswordHint": "Tu contraseña",
+  "@formPasswordHint": {
+    "description": "Sugerencia del campo de contraseña"
+  },
+  "formPasswordLabel": "Contraseña",
+  "@formPasswordLabel": {
+    "description": "Etiqueta del campo de contraseña"
+  },
+  "formReEnterHint": "Tu contraseña",
+  "@formReEnterHint": {
+    "description": "Sugerencia del campo de confirmación de contraseña"
+  },
+  "formReEnterLabel": "Repetir contraseña",
+  "@formReEnterLabel": {
+    "description": "Etiqueta del campo de confirmación de contraseña"
+  },
+  "continueTextButton": "Continuar",
+  "@continueTextButton": {
+    "description": "Texto del botón Continuar"
+  },
+  "continueWithGoogleTextButton": "Continuar con Google",
+  "@continueWithGoogleTextButton": {
+    "description": "Texto del botón Continuar con Google"
+  },
+  "signUpOrTextOption": "O",
+  "@signUpOrTextOption": {
+    "description": "Texto opcional de 'O'"
+  },
+  "otpSentTitle": "Verificación OTP",
+  "@otpSentTitle": {
+    "description": "Título de la pantalla OTP"
+  },
+  "otpSentMessage": "Hemos enviado tu código a",
+  "@otpSentMessage": {
+    "description": "Mensaje de código OTP enviado"
+  },
+  "otpExpirationMessage": "Este código expirará en",
+  "@otpExpirationMessage": {
+    "description": "Mensaje de expiración del código OTP"
+  },
+  "otpResentMessage": "Reenviar código OTP",
+  "@otpResentMessage": {
+    "description": "Mensaje de reenvío de código OTP"
+  },
+  "carTitleLabel": "Título",
+  "@carTitleLabel": {
+    "description": "Etiqueta del título del auto"
+  },
+  "carTitleHint": "Describe tu auto",
+  "@carTitleHint": {
+    "description": "Sugerencia para el título del auto"
+  },
+  "carTypeLabel": "Tipo de auto",
+  "@carTypeLabel": {
+    "description": "Etiqueta del tipo de auto"
+  },
+  "carTypeHint": "Selecciona tu tipo de auto",
+  "@carTypeHint": {
+    "description": "Sugerencia para el tipo de auto"
+  },
+  "carPlaqueLabel": "Placa",
+  "@carPlaqueLabel": {
+    "description": "Etiqueta de la placa del auto"
+  },
+  "carPlaqueHint": "",
+  "@carPlaqueHint": {
+    "description": "Sugerencia para la placa del auto"
+  },
+  "carChassisNumberLabel": "Número de chasis",
+  "@carChassisNumberLabel": {
+    "description": "Etiqueta del número de chasis"
+  },
+  "carChassisNumberHint": "",
+  "@carChassisNumberHint": {
+    "description": "Sugerencia para el número de chasis"
+  },
+  "carDistanceTraveledLabel": "Distancia recorrida",
+  "@carDistanceTraveledLabel": {
+    "description": "Etiqueta de la distancia recorrida"
+  },
+  "carDistanceTraveledHint": "",
+  "@carDistanceTraveledHint": {
+    "description": "Sugerencia para la distancia recorrida"
+  },
+  "carMakeLabel": "Marca",
+  "@carMakeLabel": {
+    "description": "Etiqueta de la marca del auto"
+  },
+  "carMakeHint": "",
+  "@carMakeHint": {
+    "description": "Sugerencia para la marca del auto"
+  },
+  "carModelLabel": "Modelo",
+  "@carModelLabel": {
+    "description": "Etiqueta del modelo del auto"
+  },
+  "carModelHint": "",
+  "@carModelHint": {
+    "description": "Sugerencia para el modelo del auto"
+  },
+  "carYearLabel": "Año",
+  "@carYearLabel": {
+    "description": "Etiqueta del año del auto"
+  },
+  "carYearHint": "",
+  "@carYearHint": {
+    "description": "Sugerencia para el año del auto"
+  },
+  "carDistanceMeasurementLabel": "Unidad de distancia",
+  "@carDistanceMeasurementLabel": {
+    "description": "Etiqueta de la unidad de distancia"
+  },
+  "carDistanceMeasurementHint": "",
+  "@carDistanceMeasurementHint": {
+    "description": "Sugerencia para la unidad de distancia"
+  },
+  "carLastServiceDateLabel": "Último servicio",
+  "@carLastServiceDateLabel": {
+    "description": "Etiqueta de la fecha del último servicio"
+  },
+  "carLastServiceDateHint": "",
+  "@carLastServiceDateHint": {
+    "description": "Sugerencia para la fecha del último servicio"
+  },
+  "carDistanceMeasurementKm": "Kilómetros",
+  "@carDistanceMeasurementKm": {
+    "description": ""
+  },
+  "carDistanceMeasurementMi": "Millas",
+  "@carDistanceMeasurementMi": {
+    "description": ""
+  },
+  "fillDetailsTitle": "Rellenar detalles",
+  "@fillDetailsTitle": {
+    "description": ""
+  },
+  "saveButtonText": "Guardar",
+  "@saveButtonText": {
+    "description": ""
+  },
+  "selectVehicleTitle": "Seleccionar un tipo de auto",
+  "@selectVehicleTitle": {
+    "description": ""
+  },
+  "yourCarsTitle": "Tus vehículos",
+  "@yourCarsTitle": {
+    "description": ""
+  },
+  "yourCarsSingularSubTitle": "vehículo",
+  "@yourCarsSingularSubTitle": {
+    "description": ""
+  },
+  "yourCarsPluralSubTitle": "vehículos",
+  "@yourCarsPluralSubTitle": {
+    "description": ""
+  },
+  "noCarsRegisterMessage": "No tiene vehículos registrados",
+  "@noCarsRegisterMessage": {
+    "description": ""
+  },
+  "registerNewCarButton": "Registra un nuevo vehículo",
+  "@registerNewCarButton": {
+    "description": ""
+  },
+  "editingTitle": "Editando",
+  "@editingTitle": {
+    "description": ""
+  },
+  "confirmTitle": "Eliminando",
+  "@confirmTitle": {
+    "description": ""
+  },
+  "confirmMessage": "Esta seguro que desea eliminar este vehículo?",
+  "@confirmMessage": {
+    "description": ""
+  },
+  "cancelButton": "CANCELAR",
+  "@cancelButton": {
+    "description": ""
+  },
+  "deleteButton": "ELIMINAR",
+  "@deleteButton": {
+    "description": ""
+  },
+  "searchBarHint": "Buscar Servicios",
+  "@searchBarHint": {
+    "description": ""
+  },
+  "lastServiceLabel": "Último servicio",
+  "@lastServiceLabel": {
+    "description": ""
+  },
+  "registeredLabel": "registrado",
+  "@registeredLabel": {
+    "description": ""
+  },
+  "viewAllLabel": "Ver todos",
+  "@viewAllLabel": {
+    "description": ""
+  },
+  "navHomeLabel": "Inicio",
+  "@navHomeLabel": {
+    "description": ""
+  },
+  "navProfileLabel": "Perfil",
+  "@navProfileLabel": {
+    "description": ""
+  },
+  "programServiceTitle": "Que servicio necesitas?",
+  "@programServiceTitle": {
+    "description": ""
+  },
+  "programDateTitle": "Selecciona una fecha y hora",
+  "@programDateTitle": {
+    "description": ""
+  },
+  "profileTitle": "Perfil",
+  "@profileTitle": {
+    "description": ""
+  },
+  "profileMyAccountLabel": "Mi Cuenta",
+  "@profileMyAccountLabel": {
+    "description": ""
+  },
+  "profileNotificationsLabel": "Notificaciones",
+  "@profileNotificationsLabel": {
+    "description": ""
+  },
+  "profileSettingsLabel": "Configuración",
+  "@profileSettingsLabel": {
+    "description": ""
+  },
+  "profileHelpCenterLabel": "Centro de Ayuda",
+  "@profileHelpCenterLabel": {
+    "description": ""
+  },
+  "profileLogOutLabel": "Cerrar Sesión",
+  "@profileLogOutLabel": {
+    "description": ""
+  },
+  "profileResetDefaultsLabel": "Restablecer Predeterminados",
+  "@profileResetDefaultsLabel": {
+    "description": ""
+  },
+  "settingsTitle": "Configuración",
+  "@settingsTitle": {
+    "description": ""
+  },
+  "themeSelectionDefault": "Tema del Sistema",
+  "@themeSelectionDefault": {
+    "description": ""
+  },
+  "themeSelectionLight": "Tema Claro",
+  "@themeSelectionLight": {
+    "description": ""
+  },
+  "themeSelectionDark": "Tema Oscuro",
+  "@themeSelectionDark": {
+    "description": ""
+  },
+  "localeSelectionEn": "English",
+  "@localeSelectionEn": {
+    "description": ""
+  },
+  "localeSelectionEs": "Español",
+  "@localeSelectionEs": {
+    "description": ""
+  },
+  "themeSelectionTitle": "Cambia tu preferencia de tema",
+  "@themeSelectionTitle": {
+    "description": ""
+  },
+  "localeSelectionTitle": "Cambia tu preferencia de idioma",
+  "@localeSelectionTitle": {
+    "description": ""
   }
+}

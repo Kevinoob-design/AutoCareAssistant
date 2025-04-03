@@ -38,7 +38,7 @@ class SignUpScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign Up')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.signUpTitle)),
       body: SafeArea(
         child: Container(
           height: double.infinity,

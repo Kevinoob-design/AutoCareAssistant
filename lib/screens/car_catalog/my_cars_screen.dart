@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore, Qu
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyCarsScreen extends StatefulWidget {
   const MyCarsScreen({super.key});
@@ -33,8 +34,11 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
           appBar: AppBar(
             title: Column(
               children: [
-                const Text('Your Cars'),
-                Text('$length car${length == 1 ? "" : "s"}', style: Theme.of(context).textTheme.bodySmall),
+                Text(AppLocalizations.of(context)!.yourCarsTitle),
+                Text(
+                  '$length ${AppLocalizations.of(context)!.yourCarsSingularSubTitle}${length == 1 ? "" : "s"}',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
               ],
             ),
           ),
@@ -61,18 +65,20 @@ class _MyCarsScreenState extends State<MyCarsScreen> {
                   return await showDialog(
                     context: context,
                     builder: (BuildContext context) {
+                      final String title = (snapshot.data?.docs[index].data() as Map<String, dynamic>)['title'];
+
                       return AlertDialog(
-                        title: const Text('Confirm'),
-                        content: const Text('Are you sure you wish to delete this item?'),
+                        title: Text('${AppLocalizations.of(context)!.confirmTitle} $title'),
+                        content: Text(AppLocalizations.of(context)!.confirmMessage),
                         actions: <Widget>[
                           ElevatedButton(
                             onPressed: () => Navigator.of(context).pop(true),
                             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                            child: const Text('DELETE'),
+                            child: Text(AppLocalizations.of(context)!.deleteButton),
                           ),
                           ElevatedButton(
                             onPressed: () => Navigator.of(context).pop(false),
-                            child: const Text('CANCEL'),
+                            child: Text(AppLocalizations.of(context)!.cancelButton),
                           ),
                         ],
                       );
@@ -104,6 +110,6 @@ class RegisterNewCarMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('No cars registered yet'));
+    return Center(child: Text(AppLocalizations.of(context)!.noCarsRegisterMessage));
   }
 }

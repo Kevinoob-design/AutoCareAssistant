@@ -1,5 +1,6 @@
+import 'package:auto_care_assistant/shared/components/inputs/drop_down_bottom.dart' show InputDropDownBottomFormField;
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:auto_care_assistant/screens/settings/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
@@ -16,22 +17,64 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.settingsTitle)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         // Glue the SettingsController to the theme selection DropdownButton.
         //
         // When a user selects a theme from the dropdown list, the
         // SettingsController is updated, which rebuilds the MaterialApp.
-        child: DropdownButton<ThemeMode>(
-          // Read the selected themeMode from the controller
-          value: controller.themeMode,
-          // Call the updateThemeMode method any time the user selects a theme.
-          onChanged: controller.updateThemeMode,
-          items: const [
-            DropdownMenuItem(value: ThemeMode.system, child: Text('System Theme')),
-            DropdownMenuItem(value: ThemeMode.light, child: Text('Light Theme')),
-            DropdownMenuItem(value: ThemeMode.dark, child: Text('Dark Theme')),
+        child: Column(
+          spacing: 20,
+          children: [
+            Column(
+              spacing: 10,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(AppLocalizations.of(context)!.themeSelectionTitle),
+                InputDropDownBottomFormField<ThemeMode>(
+                  // Read the selected themeMode from the controller
+                  initialValue: controller.themeMode,
+                  // Call the updateThemeMode method any time the user selects a theme.
+                  onChanged: controller.updateThemeMode,
+                  items: [
+                    DropdownMenuItem(
+                      value: ThemeMode.system,
+                      child: Text(AppLocalizations.of(context)!.themeSelectionDefault),
+                    ),
+                    DropdownMenuItem(
+                      value: ThemeMode.light,
+                      child: Text(AppLocalizations.of(context)!.themeSelectionLight),
+                    ),
+                    DropdownMenuItem(
+                      value: ThemeMode.dark,
+                      child: Text(AppLocalizations.of(context)!.themeSelectionDark),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              spacing: 10,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(AppLocalizations.of(context)!.localeSelectionTitle),
+                InputDropDownBottomFormField<Locale>(
+                  initialValue: controller.locale,
+                  onChanged: controller.updateLocale,
+                  items: [
+                    DropdownMenuItem(
+                      value: Locale('en', ''),
+                      child: Text(AppLocalizations.of(context)!.localeSelectionEn),
+                    ),
+                    DropdownMenuItem(
+                      value: Locale('es', ''),
+                      child: Text(AppLocalizations.of(context)!.localeSelectionEs),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),

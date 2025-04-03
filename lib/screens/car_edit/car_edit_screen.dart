@@ -1,6 +1,7 @@
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CarEditScreen extends StatelessWidget {
   static String routeName = '/car-edit';
@@ -47,7 +48,12 @@ class CarEditScreen extends StatelessWidget {
     formData['lastServiceDate'] = car.lastServiceDate.toLocal().toString().split(' ')[0];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Editing ${car.title}', style: TextStyle(overflow: TextOverflow.ellipsis))),
+      appBar: AppBar(
+        title: Text(
+          '${AppLocalizations.of(context)!.editingTitle} ${car.title}',
+          style: TextStyle(overflow: TextOverflow.ellipsis),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -64,7 +70,7 @@ class CarEditScreen extends StatelessWidget {
                   minimumSize: const Size(double.infinity, 48),
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
                 ),
-                child: const Text('Save'),
+                child: Text(AppLocalizations.of(context)!.saveButtonText),
               ),
             ],
           ),
