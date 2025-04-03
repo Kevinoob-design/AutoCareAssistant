@@ -10,7 +10,7 @@ class InputTextFormField extends StatelessWidget {
     this.labelText = '',
     required this.onSaved,
     required this.onChanged,
-    this.suffixIcon = '',
+    this.suffixIcon,
     this.inputType = TextInputType.text,
     this.inputFormatter = const [],
     this.controller,
@@ -25,7 +25,7 @@ class InputTextFormField extends StatelessWidget {
   final String labelText;
   final FormFieldSetter onSaved;
   final FormFieldSetter onChanged;
-  final String suffixIcon;
+  final IconData? suffixIcon;
   final TextInputType inputType;
   final List<TextInputFormatter> inputFormatter;
 
@@ -46,7 +46,7 @@ class InputTextFormField extends StatelessWidget {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintStyle: const TextStyle(color: kBorderSideColor),
         contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        suffix: suffixIcon.isNotEmpty ? SvgPicture.asset(suffixIcon) : null,
+        suffix: suffixIcon != null ? Icon(suffixIcon) : null,
         border: authOutlineInputBorder,
         enabledBorder: authOutlineInputBorder,
         focusedBorder: authOutlineInputBorder.copyWith(borderSide: const BorderSide(color: Color(0xFFFF7643))),
