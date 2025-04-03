@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/components/car_type_sele
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_form.dart' show NewCarForm;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class NewCarBottomSheet extends StatefulWidget {
@@ -82,7 +83,7 @@ class _NewCarBottomSheetState extends State<NewCarBottomSheet> {
                   minimumSize: const Size(double.infinity, 48),
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
                 ),
-                child: const Text('Save'),
+                child: Text(AppLocalizations.of(context)!.saveButtonText),
               ),
           ],
         ),

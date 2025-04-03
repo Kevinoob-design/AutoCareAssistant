@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show C
 import 'package:auto_care_assistant/screens/car_catalog/components/new_car_bottom_sheet.dart' show NewCarBottomSheet;
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BottomNavBarAddCar extends StatelessWidget {
   const BottomNavBarAddCar({super.key});
@@ -33,7 +34,7 @@ class BottomNavBarAddCar extends StatelessWidget {
             minimumSize: const Size(double.infinity, 48),
             shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
           ),
-          child: const Text('Register a new Car'),
+          child: Text(AppLocalizations.of(context)!.registerNewCarButton),
         ),
       ),
     );

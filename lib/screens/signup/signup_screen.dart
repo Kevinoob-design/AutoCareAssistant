@@ -23,11 +23,13 @@ class SignUpScreen extends StatelessWidget {
     void signInWithGoogle() async {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+      if (googleUser == null) return;
+
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
       final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
@@ -36,43 +38,58 @@ class SignUpScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign Up')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.signUpTitle)),
       body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(height: 16),
-                  Subtitle(text: AppLocalizations.of(context)!.signUpSubtitle),
-                  const SizedBox(height: 8),
-                  Text(
-                    AppLocalizations.of(context)!.signUpInstructions,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: kBorderSideColor),
-                  ),
-                  const SizedBox(height: 16),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.20),
-                  const SignUpForm(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.10),
-                  Text(AppLocalizations.of(context)!.signUpOrTextOption),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.10),
-                  OauthSignupButton(
-                    icon: 'assets/icons/google-icon.svg',
-                    text: AppLocalizations.of(context)!.continueWithGoogleTextButton,
-                    press: signInWithGoogle,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    AppLocalizations.of(context)!.signUpDisclaimer,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: kBorderSideColor),
-                  ),
-                ],
+        child: Container(
+          height: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Subtitle(text: AppLocalizations.of(context)!.signUpSubtitle),
+                          Text(
+                            AppLocalizations.of(context)!.signUpInstructions,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: kBorderSideColor),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SignUpForm(),
+                  ],
+                ),
               ),
-            ),
+              Expanded(
+                child: Column(
+                  children: [
+                    Spacer(),
+                    Text(AppLocalizations.of(context)!.signUpOrTextOption),
+                    Spacer(),
+                    Column(
+                      spacing: 8,
+                      children: [
+                        OauthSignupButton(
+                          icon: 'assets/icons/google-icon.svg',
+                          text: AppLocalizations.of(context)!.continueWithGoogleTextButton,
+                          press: signInWithGoogle,
+                        ),
+                        Text(
+                          AppLocalizations.of(context)!.signUpDisclaimer,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: kBorderSideColor),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:auto_care_assistant/screens/car_catalog/models/car.dart' show Car;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:intl/intl.dart' show NumberFormat;
 
@@ -31,7 +32,7 @@ class HeaderCarCard extends StatelessWidget {
             children: [
               Text(
                 car.title,
-                style: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
               Text(
@@ -47,8 +48,8 @@ class HeaderCarCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Last service',
-                style: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
+                AppLocalizations.of(context)!.lastServiceLabel,
+                style: const TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
               ),
               Text(
                 car.lastServiceDate.toLocal().toString().split(' ')[0],

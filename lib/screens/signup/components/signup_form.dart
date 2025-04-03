@@ -44,16 +44,17 @@ class SignUpForm extends StatelessWidget {
 
     return Form(
       child: Column(
+        spacing: 15,
         children: [
           InputTextFormField(
             hintText: AppLocalizations.of(context)!.formPhoneHint,
             labelText: AppLocalizations.of(context)!.formPhoneLabel,
             onChanged: parsePhone,
             onSaved: (phone) => {},
-            suffixIcon: Icons.phone.toString(),
+            suffixIcon: Icons.phone,
+            inputType: TextInputType.phone,
             inputFormatter: [FilteringTextInputFormatter.digitsOnly],
           ),
-          const SizedBox(height: 32),
           PrimaryButton(text: AppLocalizations.of(context)!.continueTextButton, cb: goToOtp),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:auto_care_assistant/screens/car_catalog/car_service.dart' show C
 import 'package:auto_care_assistant/screens/car_catalog/components/car_type_card.dart' show CarTypeCard;
 import 'package:auto_care_assistant/screens/car_catalog/models/car_type.dart' show CarType;
 import 'package:auto_care_assistant/shared/components/headings/subtitle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class CarTypeSelection extends StatelessWidget {
@@ -13,7 +14,7 @@ class CarTypeSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Subtitle(text: 'Select vehicle type'),
+        Subtitle(text: AppLocalizations.of(context)!.selectVehicleTitle),
         Expanded(
           child: ListView.builder(
             itemCount: CarService.getCarTypes().length,

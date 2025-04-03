@@ -16,6 +16,10 @@
   "@splashScreenThirdMessage": {
     "description": "Third message of the splash screen"
   },
+  "signUpTitle": "Sign Up",
+  "@signUpTitle": {
+    "description": "Sign Up title"
+  },
   "signUpSubtitle": "Register Account",
   "@signUpSubtitle": {
     "description": "Sign Up subtitle"
@@ -174,6 +178,150 @@
   },
   "carDistanceMeasurementMi": "Miles",
   "@carDistanceMeasurementMi": {
+    "description": ""
+  },
+  "fillDetailsTitle": "Fill in vehicle details",
+  "@fillDetailsTitle": {
+    "description": ""
+  },
+  "saveButtonText": "Save",
+  "@saveButtonText": {
+    "description": ""
+  },
+  "selectVehicleTitle": "Select vehicle type",
+  "@selectVehicleTitle": {
+    "description": ""
+  },
+  "yourCarsTitle": "Your cars",
+  "@yourCarsTitle": {
+    "description": ""
+  },
+  "yourCarsSingularSubTitle": "car",
+  "@yourCarsSingularSubTitle": {
+    "description": ""
+  },
+  "yourCarsPluralSubTitle": "cars",
+  "@yourCarsPluralSubTitle": {
+    "description": ""
+  },
+  "noCarsRegisterMessage": "No cars registered yet",
+  "@noCarsRegisterMessage": {
+    "description": ""
+  },
+  "registerNewCarButton": "Register a new car",
+  "@registerNewCarButton": {
+    "description": ""
+  },
+  "editingTitle": "Editing",
+  "@editingTitle": {
+    "description": ""
+  },
+  "confirmTitle": "Deleting",
+  "@confirmTitle": {
+    "description": ""
+  },
+  "confirmMessage": "Are you sure you wish to delete this car?",
+  "@confirmMessage": {
+    "description": ""
+  },
+  "cancelButton": "CANCEL",
+  "@cancelButton": {
+    "description": ""
+  },
+  "deleteButton": "DELETE",
+  "@deleteButton": {
+    "description": ""
+  },
+  "searchBarHint": "Search Services",
+  "@searchBarHint": {
+    "description": ""
+  },
+  "lastServiceLabel": "Last service",
+  "@lastServiceLabel": {
+    "description": ""
+  },
+  "registeredLabel": "Registered",
+  "@registeredLabel": {
+    "description": ""
+  },
+  "viewAllLabel": "View all",
+  "@viewAllLabel": {
+    "description": ""
+  },
+  "navHomeLabel": "Home",
+  "@navHomeLabel": {
+    "description": ""
+  },
+  "navProfileLabel": "Profile",
+  "@navProfileLabel": {
+    "description": ""
+  },
+  "programServiceTitle": "Which service \ndo you need?",
+  "@programServiceTitle": {
+    "description": ""
+  },
+  "programDateTitle": "Select Date \nand Time",
+  "@programDateTitle": {
+    "description": ""
+  },
+  "profileTitle": "Profile",
+  "@profileTitle": {
+    "description": ""
+  },
+  "profileMyAccountLabel": "My Account",
+  "@profileMyAccountLabel": {
+    "description": ""
+  },
+  "profileNotificationsLabel": "Notifications",
+  "@profileNotificationsLabel": {
+    "description": ""
+  },
+  "profileSettingsLabel": "Settings",
+  "@profileSettingsLabel": {
+    "description": ""
+  },
+  "profileHelpCenterLabel": "Help Center",
+  "@profileHelpCenterLabel": {
+    "description": ""
+  },
+  "profileLogOutLabel": "Log Out",
+  "@profileLogOutLabel": {
+    "description": ""
+  },
+  "profileResetDefaultsLabel": "Reset Defaults",
+  "@profileResetDefaultsLabel": {
+    "description": ""
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": ""
+  },
+  "themeSelectionDefault": "System Theme",
+  "@themeSelectionDefault": {
+    "description": ""
+  },
+  "themeSelectionLight": "Light Theme",
+  "@themeSelectionLight": {
+    "description": ""
+  },
+  "themeSelectionDark": "Dark Theme",
+  "@themeSelectionDark": {
+    "description": ""
+  },
+  "localeSelectionEn": "English",
+  "@localeSelectionEn": {
+    "description": ""
+  },
+  "localeSelectionEs": "Español",
+  "@localeSelectionEs": {
+    "description": ""
+  },
+  "themeSelectionTitle": "Change your proffered theme",
+  "@themeSelectionTitle": {
+    "description": ""
+  },
+  "localeSelectionTitle": "Change your proffered language",
+  "@localeSelectionTitle": {
     "description": ""
   }
 }

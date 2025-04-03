@@ -3,6 +3,7 @@ import 'package:auto_care_assistant/screens/car_catalog/components/header_car_ca
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart' show Intl;
 
 class MyCarsBanner extends StatefulWidget {
@@ -65,7 +66,7 @@ class _MyCarsBannerState extends State<MyCarsBanner> {
               ),
               child: Text(
                 carsCount > 0
-                    ? '$carsCount ${Intl.plural(carsCount, one: 'car', other: 'cars')} registered - View all'
+                    ? '$carsCount ${Intl.plural(carsCount, one: AppLocalizations.of(context)!.yourCarsSingularSubTitle, other: AppLocalizations.of(context)!.yourCarsPluralSubTitle)} ${AppLocalizations.of(context)!.registeredLabel} - ${AppLocalizations.of(context)!.viewAllLabel}'
                     : 'Manage to my cars',
               ),
             ),

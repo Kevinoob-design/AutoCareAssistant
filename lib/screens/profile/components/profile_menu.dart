@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:auto_care_assistant/shared/config/constants.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({super.key, required this.text, required this.icon, this.press});
 
-  final String text, icon;
+  final String text;
+  final IconData icon;
   final VoidCallback? press;
 
   @override
@@ -22,7 +21,7 @@ class ProfileMenu extends StatelessWidget {
         onPressed: press,
         child: Row(
           children: [
-            SvgPicture.asset(icon, colorFilter: const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn), width: 22),
+            Icon(icon, color: kPrimaryColor, size: 22),
             const SizedBox(width: 20),
             Expanded(child: Text(text)),
             const Icon(Icons.arrow_forward_ios),

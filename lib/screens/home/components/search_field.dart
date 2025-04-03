@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:auto_care_assistant/shared/config/constants.dart';
 
 class SearchField extends StatelessWidget {
@@ -17,7 +17,7 @@ class SearchField extends StatelessWidget {
           border: searchOutlineInputBorder,
           focusedBorder: searchOutlineInputBorder,
           enabledBorder: searchOutlineInputBorder,
-          hintText: 'Search Services',
+          hintText: AppLocalizations.of(context)!.searchBarHint,
           prefixIcon: const Icon(Icons.search),
         ),
       ),

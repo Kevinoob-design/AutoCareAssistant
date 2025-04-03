@@ -1,5 +1,6 @@
 import 'package:auto_care_assistant/shared/config/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 class ProgramDate extends StatefulWidget {
@@ -98,7 +99,7 @@ class _ProgramDateState extends State<ProgramDate> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              'Select Date \nand Time',
+              AppLocalizations.of(context)!.programDateTitle,
               style: TextStyle(fontSize: 35, color: kPrimaryColor, fontWeight: FontWeight.bold),
             ),
           ),

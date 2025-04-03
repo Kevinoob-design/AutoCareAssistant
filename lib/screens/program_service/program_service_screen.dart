@@ -1,4 +1,5 @@
 import 'package:auto_care_assistant/shared/config/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class Service {
@@ -52,7 +53,7 @@ class _ProgramServiceState extends State<ProgramService> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
-                  'Which service \ndo you need?',
+                  AppLocalizations.of(context)!.programServiceTitle,
                   style: TextStyle(fontSize: 40, color: kPrimaryColor, fontWeight: FontWeight.bold),
                 ),
               ),

@@ -7,8 +7,8 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
   const InputDropDownBottomFormField({
     super.key,
     required this.items,
-    required this.onSaved,
-    required this.onChanged,
+    this.onSaved,
+    this.onChanged,
     this.labelText = '',
     this.hintText = '',
     this.suffixIcon = '',
@@ -23,8 +23,8 @@ class InputDropDownBottomFormField<T> extends StatelessWidget {
   final List<DropdownMenuItem<T>> items;
   final String hintText;
   final String labelText;
-  final FormFieldSetter<T> onSaved;
-  final FormFieldSetter<T> onChanged;
+  final FormFieldSetter<T>? onSaved;
+  final FormFieldSetter<T>? onChanged;
   final String suffixIcon;
   final TextInputType inputType;
   final List<TextInputFormatter> inputFormatter;
