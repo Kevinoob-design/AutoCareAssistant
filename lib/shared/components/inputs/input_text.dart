@@ -1,7 +1,6 @@
 import 'package:auto_care_assistant/shared/config/constants.dart' show authOutlineInputBorder, kBorderSideColor;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show TextInputFormatter;
-import 'package:flutter_svg/svg.dart';
 
 class InputTextFormField extends StatelessWidget {
   const InputTextFormField({
